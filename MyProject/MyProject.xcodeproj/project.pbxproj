@@ -14,6 +14,12 @@
 		4BA9D07D20D4EC3D00E54049 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA9D07B20D4EC3D00E54049 /* LaunchScreen.storyboard */; };
 		4BA9D08820D4EC3D00E54049 /* MyProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D08720D4EC3D00E54049 /* MyProjectTests.swift */; };
 		4BA9D09320D4EC3D00E54049 /* MyProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D09220D4EC3D00E54049 /* MyProjectUITests.swift */; };
+		4BA9D0A120D4FC5300E54049 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0A020D4FC5300E54049 /* MyTabBarController.swift */; };
+		4BA9D0A320D4FC9200E54049 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0A220D4FC9200E54049 /* MyNavigationController.swift */; };
+		4BA9D0A520D5057E00E54049 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0A420D5057E00E54049 /* HomeViewController.swift */; };
+		4BA9D0A720D5058F00E54049 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0A620D5058F00E54049 /* VideoViewController.swift */; };
+		4BA9D0A920D505A600E54049 /* HuoshanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0A820D505A600E54049 /* HuoshanViewController.swift */; };
+		4BA9D0AB20D505B500E54049 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0AA20D505B500E54049 /* MineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		4BA9D08E20D4EC3D00E54049 /* MyProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA9D09220D4EC3D00E54049 /* MyProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectUITests.swift; sourceTree = "<group>"; };
 		4BA9D09420D4EC3D00E54049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BA9D0A020D4FC5300E54049 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
+		4BA9D0A220D4FC9200E54049 /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		4BA9D0A420D5057E00E54049 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4BA9D0A620D5058F00E54049 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		4BA9D0A820D505A600E54049 /* HuoshanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuoshanViewController.swift; sourceTree = "<group>"; };
+		4BA9D0AA20D505B500E54049 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,12 @@
 				4BA9D07920D4EC3D00E54049 /* Assets.xcassets */,
 				4BA9D07B20D4EC3D00E54049 /* LaunchScreen.storyboard */,
 				4BA9D07E20D4EC3D00E54049 /* Info.plist */,
+				4BA9D0A020D4FC5300E54049 /* MyTabBarController.swift */,
+				4BA9D0A220D4FC9200E54049 /* MyNavigationController.swift */,
+				4BA9D0A420D5057E00E54049 /* HomeViewController.swift */,
+				4BA9D0A620D5058F00E54049 /* VideoViewController.swift */,
+				4BA9D0A820D505A600E54049 /* HuoshanViewController.swift */,
+				4BA9D0AA20D505B500E54049 /* MineViewController.swift */,
 			);
 			path = MyProject;
 			sourceTree = "<group>";
@@ -256,8 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA9D0A520D5057E00E54049 /* HomeViewController.swift in Sources */,
 				4BA9D07520D4EC3C00E54049 /* ViewController.swift in Sources */,
+				4BA9D0A720D5058F00E54049 /* VideoViewController.swift in Sources */,
+				4BA9D0AB20D505B500E54049 /* MineViewController.swift in Sources */,
+				4BA9D0A920D505A600E54049 /* HuoshanViewController.swift in Sources */,
+				4BA9D0A320D4FC9200E54049 /* MyNavigationController.swift in Sources */,
 				4BA9D07320D4EC3C00E54049 /* AppDelegate.swift in Sources */,
+				4BA9D0A120D4FC5300E54049 /* MyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
