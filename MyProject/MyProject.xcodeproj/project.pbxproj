@@ -20,6 +20,7 @@
 		4BA9D0A720D5058F00E54049 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0A620D5058F00E54049 /* VideoViewController.swift */; };
 		4BA9D0A920D505A600E54049 /* HuoshanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0A820D505A600E54049 /* HuoshanViewController.swift */; };
 		4BA9D0AB20D505B500E54049 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0AA20D505B500E54049 /* MineViewController.swift */; };
+		4BA9D0AD20D5186F00E54049 /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0AC20D5186F00E54049 /* MyTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		4BA9D0A620D5058F00E54049 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		4BA9D0A820D505A600E54049 /* HuoshanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuoshanViewController.swift; sourceTree = "<group>"; };
 		4BA9D0AA20D505B500E54049 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		4BA9D0AC20D5186F00E54049 /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				4BA9D0A620D5058F00E54049 /* VideoViewController.swift */,
 				4BA9D0A820D505A600E54049 /* HuoshanViewController.swift */,
 				4BA9D0AA20D505B500E54049 /* MineViewController.swift */,
+				4BA9D0AC20D5186F00E54049 /* MyTabBar.swift */,
 			);
 			path = MyProject;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				4BA9D0A720D5058F00E54049 /* VideoViewController.swift in Sources */,
 				4BA9D0AB20D505B500E54049 /* MineViewController.swift in Sources */,
 				4BA9D0A920D505A600E54049 /* HuoshanViewController.swift in Sources */,
+				4BA9D0AD20D5186F00E54049 /* MyTabBar.swift in Sources */,
 				4BA9D0A320D4FC9200E54049 /* MyNavigationController.swift in Sources */,
 				4BA9D07320D4EC3C00E54049 /* AppDelegate.swift in Sources */,
 				4BA9D0A120D4FC5300E54049 /* MyTabBarController.swift in Sources */,
