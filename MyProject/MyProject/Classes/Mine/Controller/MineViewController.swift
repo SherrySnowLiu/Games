@@ -10,11 +10,25 @@ import UIKit
 
 class MineViewController: UITableViewController {
 
+    var sections = [[MyCellModel]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = UIColor.globalBackgroundColor()
+        //获取我的 cell 的数据
+        NetworkTool.loadMyCellData { (sections) in
+            let string = "{\"text\":\"我的关注\",\"grey_text\":\"\"}"
+            let myConcern = MyCellModel.deserialize(from: string)
+            var myConcerns = [MyCellModel]()
+            myConcerns.append(myConcern!)
+            self.sections.append(myConcerns)
+            self.sections += sections
+            
+            //刷新数据
+            self.tableView.reloadData()
+        }
     }
 
 }
@@ -32,16 +46,18 @@ extension MineViewController{
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return sections.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return sections[section].count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = "测试"
+        let section = sections[indexPath.section]
+        let myCellModel = section[indexPath.row]
+        cell.textLabel?.text = myCellModel.text
         return cell
     }
 }
