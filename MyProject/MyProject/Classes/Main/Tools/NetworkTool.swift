@@ -39,12 +39,12 @@ extension NetworkToolProtocol{
                     print(data)
                     if let sections = data["sections"]?.array{
                         var sectionArray = [[MyCellModel]]()
-                        print("data:",data)
+//                        print("data:",data)
                         for item in sections{
-                            print("item:",item)
+//                            print("item:",item)
                             var rows = [MyCellModel]()
                             for row in item.arrayObject!{
-                                print("row:",row)
+//                                print("row:",row)
                                 let myCellModel = MyCellModel.deserialize(from: row as? Dictionary)
                                 rows.append(myCellModel!)
                                 

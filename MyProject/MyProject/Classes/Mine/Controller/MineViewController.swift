@@ -17,6 +17,9 @@ class MineViewController: UITableViewController {
 
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = UIColor.globalBackgroundColor()
+        tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: String(describing:MyOtherCell.self), bundle: nil), forCellReuseIdentifier: String(describing:MyOtherCell.self))
+        tableView.register(UINib(nibName: String(describing:MyFirstSectionCell.self), bundle: nil), forCellReuseIdentifier: String(describing:MyFirstSectionCell.self))
         //获取我的 cell 的数据
         NetworkTool.loadMyCellData { (sections) in
             let string = "{\"text\":\"我的关注\",\"grey_text\":\"\"}"
@@ -36,7 +39,7 @@ class MineViewController: UITableViewController {
 extension MineViewController{
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        return section == 1 ? 0 : 10
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -54,10 +57,26 @@ extension MineViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        print("section=",indexPath.section)
+        print("row=",indexPath.row)
+        if indexPath.section == 0 && indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing:MyFirstSectionCell.self)) as! MyFirstSectionCell
+            let section = sections[indexPath.section]
+            let myCellModel = section[indexPath.row]
+            cell.leftLabel.text = myCellModel.text
+            cell.rightLabel.text = myCellModel.grey_text
+            return cell
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing:MyOtherCell.self)) as! MyOtherCell
         let section = sections[indexPath.section]
         let myCellModel = section[indexPath.row]
-        cell.textLabel?.text = myCellModel.text
+//        cell.textLabel?.text = myCellModel.text
+        cell.leftLabel.text = myCellModel.text
+        cell.rightLabel.text = myCellModel.grey_text
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
