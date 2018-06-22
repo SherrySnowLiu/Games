@@ -15,6 +15,7 @@ class MyFirstSectionCell: UITableViewCell {
     @IBOutlet weak var rightLabel: UILabel!
     //右边箭头
     @IBOutlet weak var rightImageView: UIImageView!
+    @IBOutlet weak var leftImageView: UIImageView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
