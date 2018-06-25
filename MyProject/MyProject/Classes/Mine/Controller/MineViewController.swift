@@ -11,15 +11,28 @@ import UIKit
 class MineViewController: UITableViewController {
 
     var sections = [[MyCellModel]]()
+    var concerns = [MyConcern]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
+        tableView.tableHeaderView = headerView
         tableView.backgroundColor = UIColor.globalBackgroundColor()
         tableView.separatorStyle = .none
-        tableView.register(UINib(nibName: String(describing:MyOtherCell.self), bundle: nil), forCellReuseIdentifier: String(describing:MyOtherCell.self))
-        tableView.register(UINib(nibName: String(describing:MyFirstSectionCell.self), bundle: nil), forCellReuseIdentifier: String(describing:MyFirstSectionCell.self))
+        tableView.llx_registerCell(cell: MyFirstSectionCell.self)
+        tableView.llx_registerCell(cell: MyOtherCell.self)
+
         //获取我的 cell 的数据
         NetworkTool.loadMyCellData { (sections) in
             let string = "{\"text\":\"我的关注\",\"grey_text\":\"\"}"
@@ -31,7 +44,21 @@ class MineViewController: UITableViewController {
             
             //刷新数据
             self.tableView.reloadData()
+            
+            NetworkTool.loadMyConcern(completionHandler: { (concern) in
+                self.concerns = concern
+                let indexSet = IndexSet(integer:0)
+                self.tableView.reloadSections(indexSet, with: .automatic)
+            })
         }
+    }
+    fileprivate lazy var headerView:NoLoginHeaderView = {
+        let headerView = NoLoginHeaderView.headerView()
+        return headerView
+    }()
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
     }
 
 }
@@ -48,6 +75,13 @@ extension MineViewController{
         return view
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            return (concerns.count == 0 || concerns.count == 1) ? 40 :114
+        }
+        return 40
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
@@ -57,17 +91,28 @@ extension MineViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("section=",indexPath.section)
-        print("row=",indexPath.row)
+//        print("section=",indexPath.section)
+//        print("row=",indexPath.row)
         if indexPath.section == 0 && indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing:MyFirstSectionCell.self)) as! MyFirstSectionCell
+            let cell = tableView.llx_dequeueReusableCell(indexPath: indexPath) as MyFirstSectionCell
+
             let section = sections[indexPath.section]
-            let myCellModel = section[indexPath.row]
-            cell.leftLabel.text = myCellModel.text
-            cell.rightLabel.text = myCellModel.grey_text
+            cell.myCellModel = section[indexPath.row]
+           
+            if concerns.count == 0 || concerns.count == 1{
+                cell.collectionView.isHidden = true
+            }
+            if concerns.count == 1{
+                cell.myConcern = concerns[0]
+            }
+            if concerns.count > 1{
+                cell.myConcerns = concerns
+            }
             return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing:MyOtherCell.self)) as! MyOtherCell
+        
+        let cell = tableView.llx_dequeueReusableCell(indexPath: indexPath) as MyOtherCell
+
         let section = sections[indexPath.section]
         let myCellModel = section[indexPath.row]
 //        cell.textLabel?.text = myCellModel.text
@@ -79,4 +124,17 @@ extension MineViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        if offsetY < 0 {
+            //abs()取绝对值
+            let totalOffset = kMyHeaderViewHeight + abs(offsetY)
+//            let f = totalOffset / kMyHeaderViewHeight
+//            headerView.bgImageView.frame = CGRect(x: -screenWidth * (f - 1) * 0.5, y: offsetY, width: screenWidth, height: totalOffset)
+            headerView.bgImageView.frame = CGRect(x: 0, y: offsetY, width: screenWidth, height: totalOffset)
+        }
+        
+    }
 }
+

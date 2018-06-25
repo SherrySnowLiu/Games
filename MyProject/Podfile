@@ -8,4 +8,6 @@ target 'MyProject' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'HandyJSON','~>4.0.0-beta.1'
+  pod 'Kingfisher'
+  pod 'IBAnimatable'
 end

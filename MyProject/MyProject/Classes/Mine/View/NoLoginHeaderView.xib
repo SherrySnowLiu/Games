@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoLoginHeaderView" customModule="MyProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper_profile_night" translatesAutoresizingMaskIntoConstraints="NO" id="K44-Fq-ZXx">
+                    <rect key="frame" x="0.0" y="-20" width="375" height="280"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0G-00-YG3">
+                    <rect key="frame" x="0.0" y="190" width="375" height="70"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upo-iH-roQ">
+                            <rect key="frame" x="125" y="0.0" width="125" height="70"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <inset key="titleEdgeInsets" minX="-25" minY="25" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="30" minY="-25" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="历史" image="history_profile_24x24_">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHd-ce-KYv">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="125" id="48v-YA-8Xh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <inset key="titleEdgeInsets" minX="-25" minY="25" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="30" minY="-25" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="收藏" image="favoriteicon_profile_24x24_">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1y-va-VXT">
+                            <rect key="frame" x="250" y="0.0" width="125" height="70"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <inset key="titleEdgeInsets" minX="-25" minY="25" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="30" minY="-25" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="夜间" image="nighticon_profile_24x24_">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Upo-iH-roQ" firstAttribute="centerX" secondItem="z0G-00-YG3" secondAttribute="centerX" id="2bU-z5-9KJ"/>
+                        <constraint firstAttribute="bottom" secondItem="WHd-ce-KYv" secondAttribute="bottom" id="Cb0-dJ-H42"/>
+                        <constraint firstItem="Upo-iH-roQ" firstAttribute="baseline" secondItem="v1y-va-VXT" secondAttribute="firstBaseline" id="Uxs-5G-7He"/>
+                        <constraint firstItem="WHd-ce-KYv" firstAttribute="baseline" secondItem="Upo-iH-roQ" secondAttribute="firstBaseline" id="eUy-L0-GBo"/>
+                        <constraint firstItem="WHd-ce-KYv" firstAttribute="top" secondItem="Upo-iH-roQ" secondAttribute="top" id="hk7-p8-7If"/>
+                        <constraint firstItem="WHd-ce-KYv" firstAttribute="leading" secondItem="z0G-00-YG3" secondAttribute="leading" id="hwp-GN-ys2"/>
+                        <constraint firstAttribute="trailing" secondItem="v1y-va-VXT" secondAttribute="trailing" id="jmS-Jc-Ylf"/>
+                        <constraint firstItem="v1y-va-VXT" firstAttribute="leading" secondItem="Upo-iH-roQ" secondAttribute="trailing" id="sqY-Qc-QIo"/>
+                        <constraint firstItem="Upo-iH-roQ" firstAttribute="top" secondItem="v1y-va-VXT" secondAttribute="top" id="tB2-fB-rF2"/>
+                        <constraint firstItem="WHd-ce-KYv" firstAttribute="top" secondItem="z0G-00-YG3" secondAttribute="top" id="tfm-ch-S37"/>
+                        <constraint firstItem="Upo-iH-roQ" firstAttribute="leading" secondItem="WHd-ce-KYv" secondAttribute="trailing" id="uLE-ar-en3"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xm5-Om-KPi" customClass="AnimatableButton" customModule="IBAnimatable">
+                    <rect key="frame" x="125" y="142" width="125" height="28"/>
+                    <color key="backgroundColor" red="0.010986328125" green="0.14913141730000001" blue="0.0" alpha="0.5996628852739726" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="5gJ-SK-D3x"/>
+                    </constraints>
+                    <state key="normal" title="更多登陆方式&gt;"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSm-ML-YDY">
+                    <rect key="frame" x="0.0" y="51" width="375" height="66"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jua-aE-Szm">
+                            <rect key="frame" x="0.0" y="0.0" width="94" height="66"/>
+                            <state key="normal" image="cellphoneicon_login_profile_66x66_"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2W-qy-CND">
+                            <rect key="frame" x="94" y="0.0" width="93.5" height="66"/>
+                            <state key="normal" image="weixinicon_login_profile_66x66_"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZ3-ZL-g4j">
+                            <rect key="frame" x="187.5" y="0.0" width="94" height="66"/>
+                            <state key="normal" image="qqicon_login_profile_66x66_"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEz-GJ-B7h">
+                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="66"/>
+                            <state key="normal" image="sinaicon_login_profile_66x66_"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="GEz-GJ-B7h" firstAttribute="width" secondItem="jua-aE-Szm" secondAttribute="width" id="CXl-GR-IG6"/>
+                        <constraint firstItem="l2W-qy-CND" firstAttribute="width" secondItem="jua-aE-Szm" secondAttribute="width" id="msM-w5-D6r"/>
+                        <constraint firstItem="NZ3-ZL-g4j" firstAttribute="width" secondItem="jua-aE-Szm" secondAttribute="width" id="pF8-fR-b0T"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="K44-Fq-ZXx" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="7h7-pI-M3i"/>
+                <constraint firstAttribute="trailing" secondItem="K44-Fq-ZXx" secondAttribute="trailing" id="7xv-eq-3DF"/>
+                <constraint firstItem="K44-Fq-ZXx" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-20" id="8uD-bo-Y3Z"/>
+                <constraint firstItem="K44-Fq-ZXx" firstAttribute="trailing" secondItem="z0G-00-YG3" secondAttribute="trailing" id="FbP-xm-NGs"/>
+                <constraint firstItem="pSm-ML-YDY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GV4-hp-tN0"/>
+                <constraint firstItem="K44-Fq-ZXx" firstAttribute="leading" secondItem="z0G-00-YG3" secondAttribute="leading" id="Glm-pc-665"/>
+                <constraint firstItem="xm5-Om-KPi" firstAttribute="top" secondItem="pSm-ML-YDY" secondAttribute="bottom" constant="25" id="IuX-yz-NSY"/>
+                <constraint firstItem="z0G-00-YG3" firstAttribute="top" secondItem="xm5-Om-KPi" secondAttribute="bottom" constant="20" id="KPt-jF-atz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pSm-ML-YDY" secondAttribute="trailing" id="OW1-Fi-KcF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pSm-ML-YDY" secondAttribute="trailing" id="PAb-sn-dIO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pSm-ML-YDY" secondAttribute="trailing" id="Tvm-7E-Fav"/>
+                <constraint firstItem="K44-Fq-ZXx" firstAttribute="bottom" secondItem="z0G-00-YG3" secondAttribute="bottom" id="akF-Bz-VQR"/>
+                <constraint firstItem="xm5-Om-KPi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="125" id="m7y-vr-5zW"/>
+                <constraint firstItem="K44-Fq-ZXx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oZ5-U1-Dxd"/>
+                <constraint firstItem="xm5-Om-KPi" firstAttribute="centerX" secondItem="z0G-00-YG3" secondAttribute="centerX" id="piU-WA-0yq"/>
+                <constraint firstItem="xm5-Om-KPi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="142" id="sB2-VS-wbZ"/>
+                <constraint firstItem="xm5-Om-KPi" firstAttribute="top" secondItem="pSm-ML-YDY" secondAttribute="bottom" constant="25" id="sZj-ff-nY1"/>
+                <constraint firstItem="pSm-ML-YDY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="w3I-rM-gEc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bgImageView" destination="K44-Fq-ZXx" id="i2w-Rp-KMt"/>
+                <outlet property="dayOrNightButton" destination="v1y-va-VXT" id="vYv-Wg-UBY"/>
+                <outlet property="favoriteButton" destination="WHd-ce-KYv" id="Oeq-3O-QfR"/>
+                <outlet property="historyButton" destination="Upo-iH-roQ" id="OX0-NW-N3p"/>
+                <outlet property="mobileButton" destination="jua-aE-Szm" id="np8-YF-hef"/>
+                <outlet property="moreloginButton" destination="xm5-Om-KPi" id="ypP-zo-idB"/>
+                <outlet property="qqButton" destination="NZ3-ZL-g4j" id="JUz-Lv-kDg"/>
+                <outlet property="sinaButton" destination="GEz-GJ-B7h" id="aSr-4w-qg7"/>
+                <outlet property="wechatButton" destination="l2W-qy-CND" id="I2l-tA-n9s"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="cellphoneicon_login_profile_66x66_" width="66" height="66"/>
+        <image name="favoriteicon_profile_24x24_" width="24" height="24"/>
+        <image name="history_profile_24x24_" width="24" height="24"/>
+        <image name="nighticon_profile_24x24_" width="24" height="24"/>
+        <image name="qqicon_login_profile_66x66_" width="66" height="66"/>
+        <image name="sinaicon_login_profile_66x66_" width="66" height="66"/>
+        <image name="wallpaper_profile_night" width="320" height="180"/>
+        <image name="weixinicon_login_profile_66x66_" width="66" height="66"/>
+    </resources>
+</document>
