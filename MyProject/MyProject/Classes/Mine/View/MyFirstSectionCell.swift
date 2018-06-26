@@ -16,9 +16,11 @@ class MyFirstSectionCell: UITableViewCell,RegisterCellOrNib {
     //右边箭头
     @IBOutlet weak var rightImageView: UIImageView!
     @IBOutlet weak var leftImageView: UIImageView!
-    
+    //顶部view
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    //分割线
+    @IBOutlet weak var separatorView: UIView!
     var myConcerns = [MyConcern](){
         didSet{
             collectionView.reloadData()
@@ -47,6 +49,16 @@ class MyFirstSectionCell: UITableViewCell,RegisterCellOrNib {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.llx_registerCell(cell: MyConcernCell.self)
+        
+        //设置主题
+        leftLabel.theme_textColor = "colors.black"
+        rightLabel.theme_textColor = "colors.cellRightTextColor"
+        rightImageView.theme_image = "images.cellRightArrow"
+        separatorView.theme_backgroundColor = "colors.separatorViewColor"
+        //设置cell的背景色
+        theme_backgroundColor = "colors.cellBackgroundColor"
+        topView.theme_backgroundColor = "colors.cellBackgroundColor"
+        collectionView.theme_backgroundColor = "colors.cellBackgroundColor"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

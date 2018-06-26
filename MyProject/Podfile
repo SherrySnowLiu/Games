@@ -10,4 +10,7 @@ target 'MyProject' do
   pod 'HandyJSON','~>4.0.0-beta.1'
   pod 'Kingfisher'
   pod 'IBAnimatable'
+  pod 'SwiftTheme'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end

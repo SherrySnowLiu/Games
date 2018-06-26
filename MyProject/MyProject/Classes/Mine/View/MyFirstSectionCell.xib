@@ -100,6 +100,8 @@
                 <outlet property="leftLabel" destination="wp6-jO-cHx" id="iVo-p6-QTT"/>
                 <outlet property="rightImageView" destination="Bnb-Rx-t8L" id="I0A-tR-TKj"/>
                 <outlet property="rightLabel" destination="DjG-ax-jU9" id="cSd-sU-XDE"/>
+                <outlet property="separatorView" destination="Ouu-NB-Zwa" id="fbI-Lb-lJn"/>
+                <outlet property="topView" destination="N6g-LP-0nB" id="xUS-tL-rIn"/>
             </connections>
             <point key="canvasLocation" x="125" y="73.5"/>
         </tableViewCell>

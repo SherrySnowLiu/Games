@@ -52,6 +52,9 @@
                             <state key="normal" title="夜间" image="nighticon_profile_24x24_">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="dayOrNightButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="P1f-QS-sdP"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,7 +116,7 @@
             <constraints>
                 <constraint firstItem="K44-Fq-ZXx" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="7h7-pI-M3i"/>
                 <constraint firstAttribute="trailing" secondItem="K44-Fq-ZXx" secondAttribute="trailing" id="7xv-eq-3DF"/>
-                <constraint firstItem="K44-Fq-ZXx" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-20" id="8uD-bo-Y3Z"/>
+                <constraint firstItem="K44-Fq-ZXx" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-44" id="8uD-bo-Y3Z"/>
                 <constraint firstItem="K44-Fq-ZXx" firstAttribute="trailing" secondItem="z0G-00-YG3" secondAttribute="trailing" id="FbP-xm-NGs"/>
                 <constraint firstItem="pSm-ML-YDY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GV4-hp-tN0"/>
                 <constraint firstItem="K44-Fq-ZXx" firstAttribute="leading" secondItem="z0G-00-YG3" secondAttribute="leading" id="Glm-pc-665"/>
@@ -134,6 +137,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="bgImageView" destination="K44-Fq-ZXx" id="i2w-Rp-KMt"/>
+                <outlet property="bottomView" destination="z0G-00-YG3" id="pD5-dp-ygF"/>
                 <outlet property="dayOrNightButton" destination="v1y-va-VXT" id="vYv-Wg-UBY"/>
                 <outlet property="favoriteButton" destination="WHd-ce-KYv" id="Oeq-3O-QfR"/>
                 <outlet property="historyButton" destination="Upo-iH-roQ" id="OX0-NW-N3p"/>
@@ -141,6 +145,7 @@
                 <outlet property="moreloginButton" destination="xm5-Om-KPi" id="ypP-zo-idB"/>
                 <outlet property="qqButton" destination="NZ3-ZL-g4j" id="JUz-Lv-kDg"/>
                 <outlet property="sinaButton" destination="GEz-GJ-B7h" id="aSr-4w-qg7"/>
+                <outlet property="stackView" destination="pSm-ML-YDY" id="3u8-bD-UFL"/>
                 <outlet property="wechatButton" destination="l2W-qy-CND" id="I2l-tA-n9s"/>
             </connections>
         </view>

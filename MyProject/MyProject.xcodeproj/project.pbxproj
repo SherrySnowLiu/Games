@@ -30,9 +30,14 @@
 		4BA9D0DA20D54E8B00E54049 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0D920D54E8B00E54049 /* UIColor+Extension.swift */; };
 		4BC2BD3320E0E4A8006B8BB4 /* NoLoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3220E0E4A8006B8BB4 /* NoLoginHeaderView.swift */; };
 		4BC2BD3520E0E4BA006B8BB4 /* NoLoginHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3420E0E4BA006B8BB4 /* NoLoginHeaderView.xib */; };
+		4BC2BD3720E10539006B8BB4 /* MyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3620E10539006B8BB4 /* MyTheme.swift */; };
+		4BC2BD3A20E10725006B8BB4 /* default_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3920E10725006B8BB4 /* default_theme.plist */; };
+		4BC2BD3C20E10737006B8BB4 /* night_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3B20E10737006B8BB4 /* night_theme.plist */; };
 		4BD2078F20D60A41004AAB06 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2078E20D60A41004AAB06 /* NetworkTool.swift */; };
 		4BD4DDEA20D94AE20002D3FA /* MyOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4DDE820D94AE20002D3FA /* MyOtherCell.swift */; };
 		4BD4DDEB20D94AE20002D3FA /* MyOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4DDE920D94AE20002D3FA /* MyOtherCell.xib */; };
+		4BDF19D420E1EAA1007940C7 /* MoreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF19D320E1EAA1007940C7 /* MoreLoginViewController.swift */; };
+		4BDF19D620E1EAE8007940C7 /* MoreLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF19D520E1EAE8007940C7 /* MoreLoginViewController.storyboard */; };
 		4BF5826620D8FD6A00A0D1B2 /* MyCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5826520D8FD6A00A0D1B2 /* MyCellModel.swift */; };
 		7C98A63D631068D40A8C4C10 /* Pods_MyProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063693A70ED144B284B1353D /* Pods_MyProject.framework */; };
 /* End PBXBuildFile section */
@@ -85,9 +90,14 @@
 		4BA9D0D920D54E8B00E54049 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		4BC2BD3220E0E4A8006B8BB4 /* NoLoginHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLoginHeaderView.swift; sourceTree = "<group>"; };
 		4BC2BD3420E0E4BA006B8BB4 /* NoLoginHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoLoginHeaderView.xib; sourceTree = "<group>"; };
+		4BC2BD3620E10539006B8BB4 /* MyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTheme.swift; sourceTree = "<group>"; };
+		4BC2BD3920E10725006B8BB4 /* default_theme.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = default_theme.plist; sourceTree = "<group>"; };
+		4BC2BD3B20E10737006B8BB4 /* night_theme.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = night_theme.plist; sourceTree = "<group>"; };
 		4BD2078E20D60A41004AAB06 /* NetworkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		4BD4DDE820D94AE20002D3FA /* MyOtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOtherCell.swift; sourceTree = "<group>"; };
 		4BD4DDE920D94AE20002D3FA /* MyOtherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOtherCell.xib; sourceTree = "<group>"; };
+		4BDF19D320E1EAA1007940C7 /* MoreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLoginViewController.swift; sourceTree = "<group>"; };
+		4BDF19D520E1EAE8007940C7 /* MoreLoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreLoginViewController.storyboard; sourceTree = "<group>"; };
 		4BF5826520D8FD6A00A0D1B2 /* MyCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellModel.swift; sourceTree = "<group>"; };
 		5B21033B4F73857E203AE1DF /* Pods-MyProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyProject/Pods-MyProject.debug.xcconfig"; sourceTree = "<group>"; };
 		6D88057D3FB6A091E6733FE1 /* Pods_MyProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +303,7 @@
 		4BA9D0BE20D5458800E54049 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				4BC2BD3820E10700006B8BB4 /* Theme */,
 				4BA9D0BF20D5458800E54049 /* AppDelegate.swift */,
 				4BA9D0C020D5458800E54049 /* Info.plist */,
 				4BA9D0D620D54D1200E54049 /* Const.swift */,
@@ -314,6 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				4BA9D0C320D5458800E54049 /* MineViewController.swift */,
+				4BDF19D320E1EAA1007940C7 /* MoreLoginViewController.swift */,
+				4BDF19D520E1EAE8007940C7 /* MoreLoginViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -388,10 +401,20 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		4BC2BD3820E10700006B8BB4 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				4BC2BD3920E10725006B8BB4 /* default_theme.plist */,
+				4BC2BD3B20E10737006B8BB4 /* night_theme.plist */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		4BD2078D20D605A9004AAB06 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 				4BD2078E20D60A41004AAB06 /* NetworkTool.swift */,
+				4BC2BD3620E10539006B8BB4 /* MyTheme.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -517,6 +540,9 @@
 				4BD4DDEB20D94AE20002D3FA /* MyOtherCell.xib in Resources */,
 				4B08CF4120DA42BB00C83997 /* MyFirstSectionCell.xib in Resources */,
 				4BA9D07A20D4EC3D00E54049 /* Assets.xcassets in Resources */,
+				4BC2BD3A20E10725006B8BB4 /* default_theme.plist in Resources */,
+				4BC2BD3C20E10737006B8BB4 /* night_theme.plist in Resources */,
+				4BDF19D620E1EAE8007940C7 /* MoreLoginViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +592,9 @@
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -574,6 +603,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +621,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BD2078F20D60A41004AAB06 /* NetworkTool.swift in Sources */,
+				4BDF19D420E1EAA1007940C7 /* MoreLoginViewController.swift in Sources */,
+				4BC2BD3720E10539006B8BB4 /* MyTheme.swift in Sources */,
 				4BA9D0D020D5458800E54049 /* AppDelegate.swift in Sources */,
 				4B76151A20DFC83400CD7D6D /* MyConcernCell.swift in Sources */,
 				4BC2BD3320E0E4A8006B8BB4 /* NoLoginHeaderView.swift in Sources */,
