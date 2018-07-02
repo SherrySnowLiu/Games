@@ -4,6 +4,10 @@
 <dict>
 	<key>colors</key>
 	<dict>
+		<key>navigationBarTintColor</key>
+		<string>#707070</string>
+		<key>tableViewBackgroundColor</key>
+		<string>#1b1b1b</string>
 		<key>loginMobileViewBackgroundColor</key>
 		<string>#cacaca</string>
 		<key>enterToutiaoTextColor</key>
@@ -27,6 +31,10 @@
 	</dict>
 	<key>images</key>
 	<dict>
+		<key>air_download_option</key>
+		<string>air_download_option_night_20x20_</string>
+		<key>air_download_option_press</key>
+		<string>air_download_option_press_night_20x20_</string>
 		<key>moreLoginMailButton</key>
 		<string>mailbox_sdk_login_night_40x40_</string>
 		<key>moreLoginTianyiButton</key>

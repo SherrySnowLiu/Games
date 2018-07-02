@@ -11,6 +11,9 @@ import Alamofire
 import SwiftyJSON
 
 protocol NetworkToolProtocol {
+    //-----------首页 home-------------
+    //首页顶部新闻标题的数据
+    static func loadHomeNewsTitle(completionHandler:@escaping (_ newsTitles:[homeNewTitle]) -> ())
     //-----------我的界面 mine-------------
     //我的界面 cell 的数据
     static func loadMyCellData(completionHandler:@escaping (_ sections:[[MyCellModel]]) -> ())
@@ -19,6 +22,39 @@ protocol NetworkToolProtocol {
 }
 
 extension NetworkToolProtocol{
+    //-----------首页 home-------------
+    //首页顶部新闻标题的数据
+    static func loadHomeNewsTitle(completionHandler:@escaping (_ newsTitles:[homeNewTitle]) -> ()){
+        let url = BASE_URL + "/article/category/get_subscribed/v1/?"
+        let params = ["device_id":device_id,
+                      "iid":iid]
+        
+        Alamofire.request(url,parameters:params).responseJSON{(response) in
+            guard response.result.isSuccess else{
+                return
+            }
+            if let value = response.result.value{
+                let json = JSON(value)
+                guard json["message"] == "success" else{
+                    return
+                }
+                if let dataDict = json["data"].dictionary{
+                    if let data = dataDict["data"]?.arrayObject{
+                        var titles = [homeNewTitle]()
+                        let jsonString = "{\"category\":\"\",\"name\":\"推荐\"}"
+                        let recommend = homeNewTitle.deserialize(from: jsonString)
+                        titles.append(recommend!)
+                        for item in data{
+                            let newsTitle = homeNewTitle.deserialize(from: item as? NSDictionary)
+                            titles.append(newsTitle!)
+                        }
+                        completionHandler(titles)
+                    }
+                }
+                
+            }
+        }
+    }
     
     //-----------我的界面 mine-------------
     //我的界面 cell 的数据
@@ -33,31 +69,23 @@ extension NetworkToolProtocol{
             }
             if let value = response.result.value{
                 let json = JSON(value)
-//                print(json)
                 guard json["message"] == "success" else{
                     return
                 }
                 if let data = json["data"].dictionary{
-//                    print("data:",data)
                     if let sections = data["sections"]?.array{
                         var sectionArray = [[MyCellModel]]()
-//                        print("data:",data)
                         for item in sections{
-//                            print("item:",item)
                             var rows = [MyCellModel]()
                             for row in item.arrayObject!{
-//                                print("row:",row)
                                 let myCellModel = MyCellModel.deserialize(from: row as? Dictionary)
                                 rows.append(myCellModel!)
-                                
                             }
                             sectionArray.append(rows)
-                            
                         }
                         completionHandler(sectionArray)
                     }
                 }
-                
             }
         }
     }
@@ -72,12 +100,10 @@ extension NetworkToolProtocol{
             }
             if let value = response.result.value{
                 let json = JSON(value)
-//                print("json:",sjson)
                 guard json["message"] == "success" else{
                     return
                 }
                 if let datas = json["data"].arrayObject{
-//                    print("datas:",datas)
                     var conserns = [MyConcern]()
                     for data in datas{
                         let myCellModel = MyConcern.deserialize(from: data as? NSDictionary)

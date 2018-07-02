@@ -31,7 +31,8 @@ class MineViewController: UITableViewController {
 
         tableView.tableFooterView = UIView()
         tableView.tableHeaderView = headerView
-        tableView.backgroundColor = UIColor.globalBackgroundColor()
+//        tableView.backgroundColor = UIColor.globalBackgroundColor()
+        tableView.theme_backgroundColor = "colors.tableViewBackgroundColor"
         tableView.separatorStyle = .none
         tableView.llx_registerCell(cell: MyFirstSectionCell.self)
         tableView.llx_registerCell(cell: MyOtherCell.self)
@@ -60,7 +61,8 @@ class MineViewController: UITableViewController {
             let moreLoginVC = storyboard.instantiateViewController(withIdentifier:String(describing: MoreLoginViewController.self)) as! MoreLoginViewController
             moreLoginVC.modalSize = (width:.full,height:.custom(size: Float(screenHeight - (isIPhoneX ? 44 : 20))))
             self!.present(moreLoginVC, animated: true, completion: nil)
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
+//        addDisposableTo(disposeBag)
     }
     fileprivate lazy var headerView:NoLoginHeaderView = {
         let headerView = NoLoginHeaderView.headerView()
@@ -81,7 +83,8 @@ extension MineViewController{
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 10))
-        view.backgroundColor = UIColor.globalBackgroundColor()
+//        view.backgroundColor = UIColor.globalBackgroundColor()
+        view.theme_backgroundColor = "colors.tableViewBackgroundColor"
         return view
     }
     
@@ -133,6 +136,14 @@ extension MineViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 3 {
+            if indexPath.row == 1 {//系统设置
+                let settingVC = SettingViewController()
+                settingVC.navigationItem.title = "系统设置"
+                navigationController?.pushViewController(settingVC, animated: true)
+            }
+        }
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -9,11 +9,18 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    //标题数据表
+    fileprivate let newsTitleTable = NewTitleTable()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
+
+        NetworkTool.loadHomeNewsTitle { (titles) in
+            //向数据库中插入数据
+            self.newsTitleTable.insert(titles)
+        }
     }
 
 }
