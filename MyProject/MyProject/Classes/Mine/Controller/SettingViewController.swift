@@ -208,8 +208,8 @@ extension SettingViewController{
 //            }
 //            sections.append(rows)
 //        }
-        sections = cellPlist.flatMap({ section in
-            (section as! [Any]).flatMap({ row in
+        sections = cellPlist.compactMap({ section in
+            (section as! [Any]).compactMap({ row in
                 SettingModel.deserialize(from: row as?NSDictionary)
             })
         })

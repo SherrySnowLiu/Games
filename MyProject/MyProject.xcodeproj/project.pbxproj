@@ -45,6 +45,10 @@
 		4BCE167F20E33880009723C5 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE167D20E33880009723C5 /* SettingCell.swift */; };
 		4BCE168020E33880009723C5 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BCE167E20E33880009723C5 /* SettingCell.xib */; };
 		4BD2078F20D60A41004AAB06 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2078E20D60A41004AAB06 /* NetworkTool.swift */; };
+		4BD39C8920EC649D006617DD /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD39C8720EC649D006617DD /* UserDetailViewController.swift */; };
+		4BD39C8A20EC649D006617DD /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD39C8820EC649D006617DD /* UserDetailViewController.xib */; };
+		4BD39C8C20EC6932006617DD /* UserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD39C8B20EC6932006617DD /* UserDetailHeaderView.swift */; };
+		4BD39C8E20EC6946006617DD /* UserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD39C8D20EC6946006617DD /* UserDetailHeaderView.xib */; };
 		4BD4DDEA20D94AE20002D3FA /* MyOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4DDE820D94AE20002D3FA /* MyOtherCell.swift */; };
 		4BD4DDEB20D94AE20002D3FA /* MyOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4DDE920D94AE20002D3FA /* MyOtherCell.xib */; };
 		4BDF19D420E1EAA1007940C7 /* MoreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF19D320E1EAA1007940C7 /* MoreLoginViewController.swift */; };
@@ -118,6 +122,10 @@
 		4BCE167D20E33880009723C5 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		4BCE167E20E33880009723C5 /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
 		4BD2078E20D60A41004AAB06 /* NetworkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
+		4BD39C8720EC649D006617DD /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		4BD39C8820EC649D006617DD /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
+		4BD39C8B20EC6932006617DD /* UserDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailHeaderView.swift; sourceTree = "<group>"; };
+		4BD39C8D20EC6946006617DD /* UserDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailHeaderView.xib; sourceTree = "<group>"; };
 		4BD4DDE820D94AE20002D3FA /* MyOtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOtherCell.swift; sourceTree = "<group>"; };
 		4BD4DDE920D94AE20002D3FA /* MyOtherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOtherCell.xib; sourceTree = "<group>"; };
 		4BDF19D320E1EAA1007940C7 /* MoreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLoginViewController.swift; sourceTree = "<group>"; };
@@ -359,6 +367,8 @@
 				4BDF19D520E1EAE8007940C7 /* MoreLoginViewController.storyboard */,
 				4BDF19D720E23F77007940C7 /* SettingViewController.swift */,
 				4B35BCDF20E3827F009AD9F7 /* OfflineDownloadController.swift */,
+				4BD39C8720EC649D006617DD /* UserDetailViewController.swift */,
+				4BD39C8820EC649D006617DD /* UserDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -387,6 +397,8 @@
 				4BCE167E20E33880009723C5 /* SettingCell.xib */,
 				4BC3A9C120EA046A0039BBE1 /* OfflineDownloadCell.swift */,
 				4BC3A9C220EA046A0039BBE1 /* OfflineDownloadCell.xib */,
+				4BD39C8B20EC6932006617DD /* UserDetailHeaderView.swift */,
+				4BD39C8D20EC6946006617DD /* UserDetailHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -575,9 +587,11 @@
 				4BA9D07D20D4EC3D00E54049 /* LaunchScreen.storyboard in Resources */,
 				4B76151B20DFC83400CD7D6D /* MyConcernCell.xib in Resources */,
 				4BCE168020E33880009723C5 /* SettingCell.xib in Resources */,
+				4BD39C8A20EC649D006617DD /* UserDetailViewController.xib in Resources */,
 				4BC2BD3520E0E4BA006B8BB4 /* NoLoginHeaderView.xib in Resources */,
 				4BD4DDEB20D94AE20002D3FA /* MyOtherCell.xib in Resources */,
 				4B08CF4120DA42BB00C83997 /* MyFirstSectionCell.xib in Resources */,
+				4BD39C8E20EC6946006617DD /* UserDetailHeaderView.xib in Resources */,
 				4BA9D07A20D4EC3D00E54049 /* Assets.xcassets in Resources */,
 				4BCE167820E3324D009723C5 /* settingPlist.plist in Resources */,
 				4BC2BD3A20E10725006B8BB4 /* default_theme.plist in Resources */,
@@ -677,6 +691,7 @@
 				4BC3A9D020EA1A4C0039BBE1 /* SQLiteManager.swift in Sources */,
 				4B76151320DF943200CD7D6D /* UIView+Extension.swift in Sources */,
 				4BA9D0CE20D5458800E54049 /* VideoViewController.swift in Sources */,
+				4BD39C8920EC649D006617DD /* UserDetailViewController.swift in Sources */,
 				4BA9D0CD20D5458800E54049 /* HomeViewController.swift in Sources */,
 				4BA9D0D520D5458800E54049 /* MyTabBar.swift in Sources */,
 				4BA9D0CF20D5458800E54049 /* HuoshanViewController.swift in Sources */,
@@ -689,6 +704,7 @@
 				4BA9D0D320D5458800E54049 /* MyTabBarController.swift in Sources */,
 				4BA9D0D720D54D1200E54049 /* Const.swift in Sources */,
 				4BA9D0DA20D54E8B00E54049 /* UIColor+Extension.swift in Sources */,
+				4BD39C8C20EC6932006617DD /* UserDetailHeaderView.swift in Sources */,
 				4B76151520DF94D000CD7D6D /* UITabelView+Extension.swift in Sources */,
 				4BCE167C20E33524009723C5 /* SettingModel.swift in Sources */,
 			);

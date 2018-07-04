@@ -121,6 +121,7 @@ extension MineViewController{
             if concerns.count > 1{
                 cell.myConcerns = concerns
             }
+            cell.delegate = self
             return cell
         }
         
@@ -157,5 +158,13 @@ extension MineViewController{
         }
         
     }
+}
+extension MineViewController:MyFirstSectionCellDelegate{
+    //点击了第几个cell
+    func MyFirstSectionCells(_ firstCell: MyFirstSectionCell, myConcern: MyConcern) {
+        let userDetailVC = UserDetailViewController()
+        navigationController?.pushViewController(userDetailVC, animated: true)
+    }
+
 }
 

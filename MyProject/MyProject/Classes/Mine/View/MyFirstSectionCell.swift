@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol MyFirstSectionCellDelegate:class {
+    //点击了第几个cell，方法名不能用MyFirstSectionCell，和主方法名重复，会报错
+    func MyFirstSectionCells(_ firstCell:MyFirstSectionCell,myConcern:MyConcern)
+}
+
 class MyFirstSectionCell: UITableViewCell,RegisterCellOrNib {
+    weak var delegate : MyFirstSectionCellDelegate?
+    
     //标题
     @IBOutlet weak var leftLabel: UILabel!
     //副标题
@@ -80,6 +87,11 @@ extension MyFirstSectionCell:UICollectionViewDelegate,UICollectionViewDataSource
         cell.myConcern = myConcerns[indexPath.item]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let myConcern = myConcerns[indexPath.item]
+        delegate?.MyFirstSectionCells(self, myConcern: myConcern)
+    }
 }
 
 class MyConcernFlowLayout: UICollectionViewFlowLayout {
@@ -96,3 +108,4 @@ class MyConcernFlowLayout: UICollectionViewFlowLayout {
         scrollDirection = .horizontal
     }
 }
+
