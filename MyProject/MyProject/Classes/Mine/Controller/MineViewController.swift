@@ -163,6 +163,7 @@ extension MineViewController:MyFirstSectionCellDelegate{
     //点击了第几个cell
     func MyFirstSectionCells(_ firstCell: MyFirstSectionCell, myConcern: MyConcern) {
         let userDetailVC = UserDetailViewController()
+        userDetailVC.userId = myConcern.userid
         navigationController?.pushViewController(userDetailVC, animated: true)
     }
 

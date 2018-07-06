@@ -14,6 +14,11 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var bottomViewHeight: NSLayoutConstraint!
     @IBOutlet weak var bottomViewBottom: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    var userId:Int = 53271122458
+    var userDetail:UserDetail?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +28,11 @@ class UserDetailViewController: UIViewController {
         //设置约束，避免bottomView顶到边界
         bottomViewBottom.constant = isIPhoneX ? 34 : 0
         view.layoutIfNeeded()
+        
+        NetworkTool.loadUserDetail(user_id: userId) { (userDetail) in
+            self.userDetail = userDetail
+            self.headerView.userDetail = userDetail
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

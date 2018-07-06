@@ -10,6 +10,41 @@ import UIKit
 import IBAnimatable
 
 class UserDetailHeaderView: UIView {
+    
+    var userDetail:UserDetail?{
+        didSet{
+            backgroundImageView.kf.setImage(with: URL(string: userDetail!.bg_img_url)!)
+            avatarImageView.kf.setImage(with: URL(string: userDetail!.avatar_url)!)
+            vImageView.isHidden = !userDetail!.user_verified
+            nameLabel.text = userDetail!.screen_name
+            if userDetail!.verified_agency == "" {
+                verifiedAgnecyLabelHeight.constant = 0
+                verifiedAgencyLabelTop.constant = 0
+            } else {
+                verifiedAgencyLabel.text = userDetail!.verified_agency + "："
+                verfifiedContentLabel.text = userDetail!.verified_content
+            }
+            concernButton.isSelected = userDetail!.is_following
+            if userDetail!.area == "" {
+                areaButton.isHidden = true
+                areaButtonHeight.constant = 0
+                areaButtonTop.constant = 0
+            } else {
+                areaButton.setTitle(userDetail!.area, for: .normal)
+            }
+            descriptionLabel.text = userDetail!.description as String
+            if userDetail!.descriptionHeight! > 21 {
+                unfoldButton.isHidden = false
+                unfoldButtonWidth.constant = 40.0
+            }
+            //推荐按钮的约束
+            recommendButtonWidth.constant = 0
+            recommendButtonTrailing.constant = 10.0
+            followersCountLabel.text = userDetail!.followersCount
+            followingsCountLabel.text = userDetail!.followingsCount
+            layoutIfNeeded()
+        }
+    }
     //背景图片
     @IBOutlet weak var backgroundImageView: UIImageView!
     //背景图片顶部约束
@@ -65,8 +100,80 @@ class UserDetailHeaderView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    //发私信按钮
+    @IBAction func sendMailButtonClicked() {
+        
+    }
+    //关注按钮
+    @IBAction func concernButtonClicked(_ sender: AnimatableButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected{ //已关注，点击取消关注
+            NetworkTool.loadRelationUnfollow(user_id: userDetail!.user_id) { (_) in
+                sender.isSelected = !sender.isSelected
+                self.recommendButton.isHidden = true
+                self.recommendButton.isSelected = false
+                self.recommendButtonWidth.constant = 0
+                self.recommendButtonTrailing.constant = 0
+                self.recommendViewHeight.constant = 0
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.recommendButton.imageView?.transform = .identity
+                    self.layoutIfNeeded()
+                }){ (_) in
+                    self.resetLayout()
+                }
+            }
+        }else{//未关注，点击则关注该用户
+            NetworkTool.loadRelationFollow(user_id: userDetail!.user_id) { (_) in
+                sender.isSelected = !sender.isSelected
+                self.recommendButton.isHidden = false
+                self.recommendButton.isSelected = false
+                self.recommendButtonWidth.constant = 28.0
+                self.recommendButtonTrailing.constant = 15.0
+                self.recommendViewHeight.constant = 223.0
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.layoutIfNeeded()
+                }) { (_) in
+                    self.resetLayout()
+                    NetworkTool.loadRelationUserRecommend(user_id: self.userDetail!.user_id, completionHandler: { (userCard) in
+                        
+                    })
+                }
+            }
+        }
+    }
+    
+    //推荐关注按钮
+    @IBAction func recommendButtonClicked(_ sender: AnimatableButton) {
+        sender.isSelected = !sender.isSelected
+        recommendViewHeight.constant = sender.isSelected ? 0 : 223.0
+        UIView.animate(withDuration: 0.25, animations: {
+            sender.imageView?.transform = CGAffineTransform(rotationAngle: CGFloat(sender.isSelected ? Double.pi : 0))
+            self.layoutIfNeeded()
+        }) { (_) in
+            self.resetLayout()
+        }
+    }
+    
+    //展开按钮
+    @IBAction func unfoldButtonClicked() {
+        unfoldButton.isHidden = true
+        unfoldButtonWidth.constant = 0
+        descriptionLabelHeight.constant = userDetail!.descriptionHeight!
+        UIView.animate(withDuration: 0.25, animations: {
+            self.layoutIfNeeded()
+        }) { (_) in
+            self.resetLayout()
+        }
+    }
     
     class func HeaderView() -> UserDetailHeaderView {
         return Bundle.main.loadNibNamed("\(self)", owner: nil, options: nil)?.last as! UserDetailHeaderView
     }
+    
+    fileprivate func resetLayout(){
+        baseView.height = topTabView.frame.maxY
+        height = baseView.frame.maxY
+    }
+    
+    
 }
