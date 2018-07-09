@@ -198,7 +198,7 @@ extension NetworkToolProtocol{
             }
         }
     }
-    //点击了关注按钮，就会出现相关推荐
+    ///点击了关注按钮，就会出现相关推荐
     static func loadRelationUserRecommend(user_id : Int ,completionHandler:@escaping (_ userCard:UserCard) -> ()){
         let url = BASE_URL + "/user/relation/user_recommend/v1/supplement_recommends/?"
         let params = ["user_id":user_id,

@@ -32,6 +32,14 @@ class UserDetailViewController: UIViewController {
         NetworkTool.loadUserDetail(user_id: userId) { (userDetail) in
             self.userDetail = userDetail
             self.headerView.userDetail = userDetail
+            if userDetail.bottom_tab.count == 0{
+                self.bottomViewBottom.constant = 0
+                self.view.layoutIfNeeded()
+            }else{
+                //赋值给bottomview
+                self.bottomView.addSubview(self.mybottomView)
+                self.mybottomView.bottomTabs = userDetail.bottom_tab
+            }
         }
     }
     
@@ -47,8 +55,14 @@ class UserDetailViewController: UIViewController {
     
     //懒加载
     fileprivate lazy var headerView : UserDetailHeaderView = {
-        let headerView = UserDetailHeaderView.HeaderView()
+        let headerView = UserDetailHeaderView.loadViewFromNib()
         return headerView
+    }()
+    
+    //懒加载
+    fileprivate lazy var mybottomView : UserDetailBottomView = {
+        let mybottomView = UserDetailBottomView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
+        return mybottomView
     }()
 
     override func didReceiveMemoryWarning() {

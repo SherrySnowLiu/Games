@@ -39,6 +39,7 @@
 		4BC3A9C620EA074C0039BBE1 /* HomeNewsTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3A9C520EA074C0039BBE1 /* HomeNewsTitle.swift */; };
 		4BC3A9CC20EA1A000039BBE1 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC3A9CB20EA1A000039BBE1 /* libsqlite3.0.tbd */; };
 		4BC3A9D020EA1A4C0039BBE1 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3A9CF20EA1A4C0039BBE1 /* SQLiteManager.swift */; };
+		4BCDBBF820F3114800E0E291 /* UserDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDBBF720F3114800E0E291 /* UserDetailBottomView.swift */; };
 		4BCE167820E3324D009723C5 /* settingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BCE167720E3324D009723C5 /* settingPlist.plist */; };
 		4BCE167A20E33501009723C5 /* MyCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE167920E33501009723C5 /* MyCellModel.swift */; };
 		4BCE167C20E33524009723C5 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE167B20E33524009723C5 /* SettingModel.swift */; };
@@ -117,6 +118,7 @@
 		4BC3A9CB20EA1A000039BBE1 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		4BC3A9CD20EA1A180039BBE1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4BC3A9CF20EA1A4C0039BBE1 /* SQLiteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		4BCDBBF720F3114800E0E291 /* UserDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailBottomView.swift; sourceTree = "<group>"; };
 		4BCE167720E3324D009723C5 /* settingPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = settingPlist.plist; sourceTree = "<group>"; };
 		4BCE167920E33501009723C5 /* MyCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellModel.swift; sourceTree = "<group>"; };
 		4BCE167B20E33524009723C5 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				4BC3A9C220EA046A0039BBE1 /* OfflineDownloadCell.xib */,
 				4BD39C8B20EC6932006617DD /* UserDetailHeaderView.swift */,
 				4BD39C8D20EC6946006617DD /* UserDetailHeaderView.xib */,
+				4BCDBBF720F3114800E0E291 /* UserDetailBottomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				4BCE167A20E33501009723C5 /* MyCellModel.swift in Sources */,
 				4BD4DDEA20D94AE20002D3FA /* MyOtherCell.swift in Sources */,
 				4BD7D80120EF43120083B8B1 /* UserDetail.swift in Sources */,
+				4BCDBBF820F3114800E0E291 /* UserDetailBottomView.swift in Sources */,
 				4BA9D0D220D5458800E54049 /* MineViewController.swift in Sources */,
 				4BDF19D820E23F77007940C7 /* SettingViewController.swift in Sources */,
 				4BA9D0D320D5458800E54049 /* MyTabBarController.swift in Sources */,

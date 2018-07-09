@@ -65,7 +65,7 @@ class MineViewController: UITableViewController {
 //        addDisposableTo(disposeBag)
     }
     fileprivate lazy var headerView:NoLoginHeaderView = {
-        let headerView = NoLoginHeaderView.headerView()
+        let headerView = NoLoginHeaderView.loadViewFromNib()
         return headerView
     }()
     

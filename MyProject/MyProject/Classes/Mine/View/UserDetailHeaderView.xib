@@ -44,14 +44,14 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="c_comment_like_icon_18x18_" translatesAutoresizingMaskIntoConstraints="NO" id="o9X-3R-kPu">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="all_v_avatar_18x18_" translatesAutoresizingMaskIntoConstraints="NO" id="o9X-3R-kPu">
                             <rect key="frame" x="68" y="17" width="19" height="19"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="19" id="rcM-aW-Jpv"/>
                                 <constraint firstAttribute="width" constant="19" id="rdO-H6-jdH"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWI-lv-0sn" customClass="AnimatableButton" customModule="IBAnimatable">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWI-lv-0sn" customClass="AnimatableButton" customModule="IBAnimatable">
                             <rect key="frame" x="322" y="15" width="28" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="PrD-6H-ycg"/>
@@ -207,7 +207,7 @@
                                         <constraint firstAttribute="height" constant="0.5" id="EVX-Gg-ed3"/>
                                     </constraints>
                                 </view>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lB-vQ-viw">
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lB-vQ-viw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </scrollView>
@@ -320,8 +320,8 @@
         </view>
     </objects>
     <resources>
+        <image name="all_v_avatar_18x18_" width="18" height="18"/>
         <image name="arrow_up_16_16x14_" width="16" height="14"/>
-        <image name="c_comment_like_icon_18x18_" width="18" height="18"/>
         <image name="locationicon_repost_16x20_" width="16" height="20"/>
         <image name="toutiaohao_34x14_" width="34" height="14"/>
         <image name="wallpaper_profile_night" width="320" height="180"/>

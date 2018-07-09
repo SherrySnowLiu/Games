@@ -10,7 +10,7 @@ import UIKit
 import IBAnimatable
 import SwiftTheme
 
-class NoLoginHeaderView: UIView {
+class NoLoginHeaderView: UIView,NibLoadable {
 
     //收藏、历史、夜间的背景view
     @IBOutlet weak var bottomView: UIView!
@@ -25,9 +25,6 @@ class NoLoginHeaderView: UIView {
     @IBOutlet weak var mobileButton: UIButton!
     //背景图片
     @IBOutlet weak var bgImageView: UIImageView!
-    class func headerView() -> NoLoginHeaderView {
-        return Bundle.main.loadNibNamed("\(self)", owner: nil, options: nil)?.last as! NoLoginHeaderView
-    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

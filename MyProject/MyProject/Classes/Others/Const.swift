@@ -23,3 +23,10 @@ let isNight = "isNight"
 
 let isIPhoneX:Bool = screenHeight == 812 ? true : false
 
+///关注的用户详情界面 topTab 的按钮的宽度
+let topTabButtonWidth:CGFloat = screenWidth * 0.2
+///关注的用户详情界面 topTab 的展示条的宽度和高度
+let topTabindicatorWidth:CGFloat = 40
+let topTabindicatorHeight:CGFloat = 2
+
+

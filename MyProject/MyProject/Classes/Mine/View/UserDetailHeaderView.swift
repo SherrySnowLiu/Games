@@ -9,7 +9,7 @@
 import UIKit
 import IBAnimatable
 
-class UserDetailHeaderView: UIView {
+class UserDetailHeaderView: UIView,NibLoadable {
     
     var userDetail:UserDetail?{
         didSet{
@@ -25,6 +25,9 @@ class UserDetailHeaderView: UIView {
                 verfifiedContentLabel.text = userDetail!.verified_content
             }
             concernButton.isSelected = userDetail!.is_following
+            concernButton.theme_backgroundColor = userDetail!.is_following ? "colors.userDetailFollowingConcernBtnBgColor":"colors.userDetailConcernBtnBgColor"
+            concernButton.borderColor = userDetail!.is_following ? .garyColor232() : .globalRedColor()
+            concernButton.borderWidth = userDetail!.is_following ? 1 : 0
             if userDetail!.area == "" {
                 areaButton.isHidden = true
                 areaButtonHeight.constant = 0
@@ -42,9 +45,55 @@ class UserDetailHeaderView: UIView {
             recommendButtonTrailing.constant = 10.0
             followersCountLabel.text = userDetail!.followersCount
             followingsCountLabel.text = userDetail!.followingsCount
+            
+            if userDetail!.top_tab.count > 0 {
+                for (index,topTab) in userDetail!.top_tab.enumerated(){
+                    //按钮
+                    let button = UIButton(frame: CGRect(x: CGFloat(index) * topTabButtonWidth, y: 0, width: topTabButtonWidth, height: bottomScrollView.height))
+                    button.setTitle(topTab.show_name, for: .normal)
+                    button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+                    button.theme_setTitleColor("colors.black", forState: .normal)
+                    button.theme_setTitleColor("colors.globalRedColor", forState: .selected)
+                    button.addTarget(self, action: #selector(topTabButtonClicked(button:)), for: .touchUpInside)
+                    bottomScrollView.addSubview(button)
+                    
+                    if index == 0 {
+                        button.isSelected = true
+                        privorButton = button
+                    }
+                    if index == userDetail!.top_tab.count - 1 {
+                        bottomScrollView.contentSize = CGSize(width: button.frame.maxX, height: bottomScrollView.height)
+                    }
+                }
+                bottomScrollView.addSubview(indicatorView)
+            }else{
+                topTabHeight.constant = 0
+                topTabView.isHidden = true
+            }
+           
             layoutIfNeeded()
         }
     }
+    
+    //topTab 按钮点击事件
+    @objc func topTabButtonClicked(button:UIButton) {
+        privorButton?.isSelected = false
+        button.isSelected = !button.isSelected
+        UIView.animate(withDuration: 0.25, animations: {
+            self.indicatorView.centerX = button.centerX
+        }) { (_) in
+            self.privorButton = button
+        }
+    }
+    
+    //topTab 指示条
+    private lazy var indicatorView:UIView = {
+        let indicatorView = UIView(frame: CGRect(x: (topTabButtonWidth - topTabindicatorWidth) * 0.5, y: topTabView.height - 3, width: topTabindicatorWidth, height: topTabindicatorHeight))
+        indicatorView.theme_backgroundColor = "colors.globalRedColor"
+        return indicatorView
+    }()
+    
+    weak var privorButton = UIButton()
     //背景图片
     @IBOutlet weak var backgroundImageView: UIImageView!
     //背景图片顶部约束
@@ -99,6 +148,25 @@ class UserDetailHeaderView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        concernButton.setTitle("关注", for: .normal)
+        concernButton.setTitle("已关注", for: .selected)
+        //设置主题颜色
+        theme_backgroundColor = "colors.cellBackgroundColor"
+        topTabView.theme_backgroundColor = "colors.cellBackgroundColor"
+        separatorView.theme_backgroundColor = "colors.separatorViewColor"
+        nameLabel.theme_textColor = "colors.black"
+        sendMailButton.theme_setTitleColor("colors.userDetailSendMailTextColor", forState: .normal)
+        unfoldButton.theme_setTitleColor("colors.userDetailSendMailTextColor", forState: .normal)
+        followersCountLabel.theme_textColor = "colors.userDetailSendMailTextColor"
+        followingsCountLabel.theme_textColor = "colors.userDetailSendMailTextColor"
+//        concernButton.theme_setTitleColor("colors.userDetailConcernBtnBgColor", forState: .normal)
+        concernButton.theme_setTitleColor("colors.userDetailConcernButtonSelectedTextColor", forState: .normal)
+        concernButton.theme_setTitleColor("colors.userDetailConcernButtonSelectedTextColor", forState: .selected)
+        verifiedAgencyLabel.theme_textColor = "colors.verifiedAgencyTextColor"
+        verfifiedContentLabel.theme_textColor = "colors.black"
+        descriptionLabel.theme_textColor = "colors.black"
+        toutiaohaoImageView.theme_image = "images.toutiaohao"
     }
     //发私信按钮
     @IBAction func sendMailButtonClicked() {
@@ -106,10 +174,11 @@ class UserDetailHeaderView: UIView {
     }
     //关注按钮
     @IBAction func concernButtonClicked(_ sender: AnimatableButton) {
-        sender.isSelected = !sender.isSelected
+//        sender.isSelected = !sender.isSelected
         if sender.isSelected{ //已关注，点击取消关注
             NetworkTool.loadRelationUnfollow(user_id: userDetail!.user_id) { (_) in
                 sender.isSelected = !sender.isSelected
+                self.concernButton.theme_backgroundColor = "colors.globalRedColor"
                 self.recommendButton.isHidden = true
                 self.recommendButton.isSelected = false
                 self.recommendButtonWidth.constant = 0
@@ -125,6 +194,7 @@ class UserDetailHeaderView: UIView {
         }else{//未关注，点击则关注该用户
             NetworkTool.loadRelationFollow(user_id: userDetail!.user_id) { (_) in
                 sender.isSelected = !sender.isSelected
+                self.concernButton.theme_backgroundColor = "colors.userDetailFollowingConcernBtnBgColor"
                 self.recommendButton.isHidden = false
                 self.recommendButton.isSelected = false
                 self.recommendButtonWidth.constant = 28.0
@@ -164,10 +234,6 @@ class UserDetailHeaderView: UIView {
         }) { (_) in
             self.resetLayout()
         }
-    }
-    
-    class func HeaderView() -> UserDetailHeaderView {
-        return Bundle.main.loadNibNamed("\(self)", owner: nil, options: nil)?.last as! UserDetailHeaderView
     }
     
     fileprivate func resetLayout(){
