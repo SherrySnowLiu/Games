@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol UserDetailBottomViewDelegate:class {
+    ///bottomView 底部按钮的点击
+    func bottomView(clicked button:UIButton,bottomTab:BottomTab)
+}
+
 class UserDetailBottomView: UIView {
+    
+    weak var delegate:UserDetailBottomViewDelegate?
     
     var bottomTabs = [BottomTab](){
         didSet{
@@ -34,12 +41,7 @@ class UserDetailBottomView: UIView {
     }
     
     @objc func bottomTabButtonClicked(button:UIButton) {
-        let bottomTab = bottomTabs[button.tag]
-        if bottomTab.children.count == 0 { //直接跳转到下一控制器
-            
-        }else{ //弹出 子视图
-            
-        }
+        delegate?.bottomView(clicked: button, bottomTab: bottomTabs[button.tag])
     }
     
 

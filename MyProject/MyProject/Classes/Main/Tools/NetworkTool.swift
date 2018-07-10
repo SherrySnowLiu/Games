@@ -27,7 +27,7 @@ protocol NetworkToolProtocol {
     //点击关注按钮，关注用户
     static func loadRelationFollow(user_id : Int ,completionHandler:@escaping (_ user:ConcernUser) -> ())
     //点击了关注按钮，就会出现相关推荐
-    static func loadRelationUserRecommend(user_id : Int ,completionHandler:@escaping (_ userCard:UserCard) -> ())
+    static func loadRelationUserRecommend(user_id : Int ,completionHandler:@escaping (_ userCard:[UserCard]) -> ())
 }
 
 extension NetworkToolProtocol{
@@ -129,7 +129,7 @@ extension NetworkToolProtocol{
             }
             if let value = response.result.value{
                 let json = JSON(value)
-                print(json)
+//                print(json)
                 guard json["message"] == "success" else{
                     if let data = json["data"].dictionaryObject{
                         SVProgressHUD.showInfo(withStatus: data["description"] as? String)
@@ -199,7 +199,7 @@ extension NetworkToolProtocol{
         }
     }
     ///点击了关注按钮，就会出现相关推荐
-    static func loadRelationUserRecommend(user_id : Int ,completionHandler:@escaping (_ userCard:UserCard) -> ()){
+    static func loadRelationUserRecommend(user_id : Int ,completionHandler:@escaping (_ userCard:[UserCard]) -> ()){
         let url = BASE_URL + "/user/relation/user_recommend/v1/supplement_recommends/?"
         let params = ["user_id":user_id,
                       "device_id":device_id,
@@ -213,12 +213,16 @@ extension NetworkToolProtocol{
             }
             if let value = response.result.value{
                 let json = JSON(value)
+                print(json)
                 guard json["err_no"] == 0 else{
                     return
                 }
-                if let data = json["user_cards"].dictionaryObject{
-                    let userCard = UserCard.deserialize(from: data["user"] as? Dictionary)
-                    completionHandler(userCard!)
+//                if let data = json["user_cards"].dictionaryObject{
+//                    let userCard = UserCard.deserialize(from: data["user"] as? Dictionary)
+//                    completionHandler([userCard!])
+//                }
+                if let user_cards = json["user_cards"].arrayObject {
+                    completionHandler(user_cards.compactMap({ UserCard.deserialize(from: $0 as? Dictionary) }))
                 }
             }
         }

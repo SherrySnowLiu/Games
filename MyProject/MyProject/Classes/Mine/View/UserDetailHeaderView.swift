@@ -93,6 +93,12 @@ class UserDetailHeaderView: UIView,NibLoadable {
         return indicatorView
     }()
     
+    ///懒加载 自定义的推荐view
+    fileprivate lazy var relationRecommendView:RelationRecommendView={
+        let relationRecommendView = RelationRecommendView.loadViewFromNib()
+        return relationRecommendView
+    }()
+    
     weak var privorButton = UIButton()
     //背景图片
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -161,7 +167,7 @@ class UserDetailHeaderView: UIView,NibLoadable {
         followersCountLabel.theme_textColor = "colors.userDetailSendMailTextColor"
         followingsCountLabel.theme_textColor = "colors.userDetailSendMailTextColor"
 //        concernButton.theme_setTitleColor("colors.userDetailConcernBtnBgColor", forState: .normal)
-        concernButton.theme_setTitleColor("colors.userDetailConcernButtonSelectedTextColor", forState: .normal)
+        concernButton.theme_setTitleColor("colors.userDetailConcernButtonTextColor", forState: .normal)
         concernButton.theme_setTitleColor("colors.userDetailConcernButtonSelectedTextColor", forState: .selected)
         verifiedAgencyLabel.theme_textColor = "colors.verifiedAgencyTextColor"
         verfifiedContentLabel.theme_textColor = "colors.black"
@@ -199,13 +205,14 @@ class UserDetailHeaderView: UIView,NibLoadable {
                 self.recommendButton.isSelected = false
                 self.recommendButtonWidth.constant = 28.0
                 self.recommendButtonTrailing.constant = 15.0
-                self.recommendViewHeight.constant = 223.0
+                self.recommendViewHeight.constant = 233.0
                 UIView.animate(withDuration: 0.25, animations: {
                     self.layoutIfNeeded()
                 }) { (_) in
                     self.resetLayout()
-                    NetworkTool.loadRelationUserRecommend(user_id: self.userDetail!.user_id, completionHandler: { (userCard) in
-                        
+                    NetworkTool.loadRelationUserRecommend(user_id: self.userDetail!.user_id, completionHandler: { (userCards) in
+                        self.recommendView.addSubview(self.relationRecommendView)
+                        self.relationRecommendView.userCards = userCards
                     })
                 }
             }
@@ -228,6 +235,8 @@ class UserDetailHeaderView: UIView,NibLoadable {
     @IBAction func unfoldButtonClicked() {
         unfoldButton.isHidden = true
         unfoldButtonWidth.constant = 0
+        relationRecommendView.labelHeight.constant = 0
+        relationRecommendView.layoutIfNeeded()
         descriptionLabelHeight.constant = userDetail!.descriptionHeight!
         UIView.animate(withDuration: 0.25, animations: {
             self.layoutIfNeeded()

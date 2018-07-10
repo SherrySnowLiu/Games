@@ -18,7 +18,7 @@ let device_id:String = "6096495334"
 let iid:String = "5034850950"
 
 let kMyHeaderViewHeight:CGFloat = 280
-
+let kUserDetailHeaderBGImageViewHeight:CGFloat = 146
 let isNight = "isNight"
 
 let isIPhoneX:Bool = screenHeight == 812 ? true : false
@@ -29,4 +29,5 @@ let topTabButtonWidth:CGFloat = screenWidth * 0.2
 let topTabindicatorWidth:CGFloat = 40
 let topTabindicatorHeight:CGFloat = 2
 
+let MyPresentationControllerDismiss = "MyPresentationControllerDismiss"
 
