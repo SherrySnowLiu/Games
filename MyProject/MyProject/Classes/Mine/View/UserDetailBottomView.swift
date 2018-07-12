@@ -24,6 +24,7 @@ class UserDetailBottomView: UIView {
             for (index,bottomTab) in bottomTabs.enumerated(){
                 //按钮
                 let button = UIButton(frame: CGRect(x: CGFloat(index) * (buttonWidth + 1), y: 0, width: buttonWidth, height: height))
+                button.tag = index
                 button.setTitle(bottomTab.name, for: .normal)
                 button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
                 button.theme_setTitleColor("colors.black", forState: .normal)
@@ -47,7 +48,8 @@ class UserDetailBottomView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.clear
+//        backgroundColor = UIColor.clear
+        theme_backgroundColor = "colors.cellBackgroundColor"
     }
     
     required init?(coder aDecoder: NSCoder) {

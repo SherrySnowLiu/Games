@@ -10,7 +10,7 @@ import UIKit
 import IBAnimatable
 import Kingfisher
 
-class RelationRecommendCell: UICollectionViewCell,RegisterCellOrNib {
+class RelationRecommendCell: UICollectionViewCell,RegisterCellFromNib {
     
     var userCard:UserCard? {
         didSet{
@@ -55,7 +55,7 @@ class RelationRecommendCell: UICollectionViewCell,RegisterCellOrNib {
             NetworkTool.loadRelationFollow(user_id: userCard!.user.info.user_id) { (_) in
                 sender.isSelected = !sender.isSelected
                 self.concernButton.theme_backgroundColor = "colors.userDetailFollowingConcernBtnBgColor"
-                self.concernButton.borderColor = .garyColor232()
+                self.concernButton.borderColor = .grayColor232()
                 self.concernButton.borderWidth = 1
             
                 self.loadingImageView.layer.removeAllAnimations()

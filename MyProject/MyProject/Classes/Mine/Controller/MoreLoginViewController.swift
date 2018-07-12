@@ -63,7 +63,7 @@ class MoreLoginViewController: AnimatableModalViewController {
         readButton.theme_setImage("images.loginReadButtonSelected", forState: .normal)
         mobileView.theme_backgroundColor = "colors.loginMobileViewBackgroundColor"
         passwordView.theme_backgroundColor = "colors.loginMobileViewBackgroundColor"
-        loginCloseButton.theme_setImage("images.loginColseButtonImage", forState: .normal)
+        loginCloseButton.theme_setImage("images.loginCloseButtonImage", forState: .normal)
         wechatLoginButton.theme_setImage("images.moreLoginWechatButton", forState: .normal)
         qqLoginButton.theme_setImage("images.moreLoginQQButton", forState: .normal)
         tianyiLoginButton.theme_setImage("images.moreLoginTianyiButton", forState: .normal)

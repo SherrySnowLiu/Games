@@ -17,8 +17,8 @@ class NavigationBarView: UIView,NibLoadable {
         didSet{
             nameLabel.text = userDetail!.screen_name
             concernButton.isSelected = userDetail!.is_following
-            concernButton.theme_backgroundColor = userDetail!.is_following ? "colors.userDetailFollowingConcernBtnBgColor":"colors.userDetailConcernBtnBgColor"
-            concernButton.borderColor = userDetail!.is_following ? .garyColor232() : .globalRedColor()
+            concernButton.theme_backgroundColor = userDetail!.is_following ? "colors.userDetailFollowingConcernBtnBgColor":"colors.globalRedColor"
+            concernButton.borderColor = userDetail!.is_following ? .grayColor232() : .globalRedColor()
             concernButton.borderWidth = userDetail!.is_following ? 1 : 0
             
         }

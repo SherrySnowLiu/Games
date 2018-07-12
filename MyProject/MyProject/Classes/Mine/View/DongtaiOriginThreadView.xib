@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DongtaiOriginThreadView" customModule="MyProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bli-ut-2yW">
+                    <rect key="frame" x="15" y="30" width="345" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="qoK-xq-zN9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3hZ-3a-MsH" customClass="DongtaiCollectionView" customModule="MyProject" customModuleProvider="target">
+                    <rect key="frame" x="15" y="30" width="345" height="637"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tgh-Yb-usw">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="3hZ-3a-MsH" firstAttribute="top" secondItem="Bli-ut-2yW" secondAttribute="bottom" id="EY2-Lv-g5L"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3hZ-3a-MsH" secondAttribute="trailing" constant="15" id="RwT-DE-Ztv"/>
+                <constraint firstItem="3hZ-3a-MsH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="Tw9-hJ-UYQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Bli-ut-2yW" secondAttribute="trailing" constant="15" id="Z16-ue-rXq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3hZ-3a-MsH" secondAttribute="bottom" id="int-8W-agg"/>
+                <constraint firstItem="Bli-ut-2yW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="msj-ei-NY8"/>
+                <constraint firstItem="Bli-ut-2yW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="yNu-bb-rS9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="collectionView" destination="3hZ-3a-MsH" id="r22-gf-WN9"/>
+                <outlet property="contentLabel" destination="Bli-ut-2yW" id="ZjL-KY-qsZ"/>
+                <outlet property="contentLabelHeight" destination="qoK-xq-zN9" id="ceH-LD-BIo"/>
+            </connections>
+        </view>
+    </objects>
+</document>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingCell: UITableViewCell,RegisterCellOrNib {
+class SettingCell: UITableViewCell,RegisterCellFromNib {
     //标题
     @IBOutlet weak var titleLabel: UILabel!
     //副标题

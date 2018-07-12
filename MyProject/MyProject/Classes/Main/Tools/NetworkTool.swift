@@ -28,6 +28,10 @@ protocol NetworkToolProtocol {
     static func loadRelationFollow(user_id : Int ,completionHandler:@escaping (_ user:ConcernUser) -> ())
     //点击了关注按钮，就会出现相关推荐
     static func loadRelationUserRecommend(user_id : Int ,completionHandler:@escaping (_ userCard:[UserCard]) -> ())
+    ///获取用户详情的动态列表数据
+    static func loadUserDetailDongtaiList(user_id : Int ,completionHandler:@escaping (_ dongtais:[UserDetailDongtai]) -> ())
+    ///获取用户详情的文章列表数据
+    static func loadUserDetailArticleList(user_id : Int ,completionHandler:@escaping (_ dongtais:[UserDetailArticleGroup]) -> ())
 }
 
 extension NetworkToolProtocol{
@@ -213,7 +217,7 @@ extension NetworkToolProtocol{
             }
             if let value = response.result.value{
                 let json = JSON(value)
-                print(json)
+//                print(json)
                 guard json["err_no"] == 0 else{
                     return
                 }
@@ -223,6 +227,53 @@ extension NetworkToolProtocol{
 //                }
                 if let user_cards = json["user_cards"].arrayObject {
                     completionHandler(user_cards.compactMap({ UserCard.deserialize(from: $0 as? Dictionary) }))
+                }
+            }
+        }
+    }
+    
+    ///获取用户详情的动态列表数据
+    static func loadUserDetailDongtaiList(user_id : Int ,completionHandler:@escaping (_ dongtais:[UserDetailDongtai]) -> ()){
+        let url = BASE_URL + "/dongtai/list/v14/?"
+        let params = ["user_id":user_id]
+        
+        Alamofire.request(url,parameters:params).responseJSON { (response) in
+            guard response.result.isSuccess else{
+                return
+            }
+            if let value = response.result.value{
+                let json = JSON(value)
+//                print(json)
+                guard json["message"] == "success" else{
+                    return
+                }
+                if let data = json["data"].dictionary {
+                    if let datas = data["data"]?.arrayObject {
+                        completionHandler(datas.compactMap({ UserDetailDongtai.deserialize(from: $0 as? Dictionary) }))
+                    }
+                }
+            }
+        }
+    }
+    ///获取用户详情的文章列表数据
+    static func loadUserDetailArticleList(user_id : Int ,completionHandler:@escaping (_ dongtais:[UserDetailArticleGroup]) -> ()){
+        let url = BASE_URL + "/dongtai/list/v10/?"
+        let params = ["user_id":user_id,
+                      "device_id":device_id,
+                      "iid":iid] as [String : Any]
+        
+        Alamofire.request(url,parameters:params).responseJSON { (response) in
+            guard response.result.isSuccess else{
+                return
+            }
+            if let value = response.result.value{
+                let json = JSON(value)
+//                print(json)
+                guard json["message"] == "success" else{
+                    return
+                }
+                if let data = json["data"].arrayObject {
+                    completionHandler(data.compactMap({ UserDetailArticleGroup.deserialize(from: $0 as? Dictionary) }))
                 }
             }
         }

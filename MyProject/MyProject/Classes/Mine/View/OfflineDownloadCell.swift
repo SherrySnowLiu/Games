@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OfflineDownloadCell: UITableViewCell,RegisterCellOrNib {
+class OfflineDownloadCell: UITableViewCell,RegisterCellFromNib {
     //标题
     @IBOutlet weak var titleLabel: UILabel!
     //勾选图片

@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class MyConcernCell: UICollectionViewCell ,RegisterCellOrNib{
+class MyConcernCell: UICollectionViewCell ,RegisterCellFromNib{
     
     @IBOutlet weak var vipImageView: UIImageView!
     //头像

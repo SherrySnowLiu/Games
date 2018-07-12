@@ -23,8 +23,8 @@ class MyTabBar: UITabBar {
     //internal，默认，也可以不写
     private lazy var publicButton: UIButton = {
         let publicButton = UIButton(type: .custom)
-        publicButton.theme_setBackgroundImage("images.publicButtonBackgroundImage", forState: .normal)
-        publicButton.theme_setBackgroundImage("images.publicButtonBackgroundSelectedImage", forState: .selected)
+        publicButton.theme_setBackgroundImage("images.publishButtonBackgroundImage", forState: .normal)
+        publicButton.theme_setBackgroundImage("images.publishButtonBackgroundSelectedImage", forState: .selected)
         publicButton.sizeToFit()
         return publicButton
     }()

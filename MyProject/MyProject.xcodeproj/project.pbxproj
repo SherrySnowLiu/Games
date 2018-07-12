@@ -9,15 +9,24 @@
 /* Begin PBXBuildFile section */
 		4B08CF4020DA42BB00C83997 /* MyFirstSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B08CF3E20DA42BB00C83997 /* MyFirstSectionCell.swift */; };
 		4B08CF4120DA42BB00C83997 /* MyFirstSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B08CF3F20DA42BB00C83997 /* MyFirstSectionCell.xib */; };
+		4B1DB65A20F49B6800E60746 /* UserDetailDongTaiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DB65820F49B6800E60746 /* UserDetailDongTaiCell.swift */; };
+		4B1DB65B20F49B6800E60746 /* UserDetailDongTaiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1DB65920F49B6800E60746 /* UserDetailDongTaiCell.xib */; };
+		4B1DB65D20F49FBB00E60746 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DB65C20F49FBA00E60746 /* Foundation+Extension.swift */; };
+		4B1DB66020F49FC300E60746 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DB65E20F49FC300E60746 /* Calculate.swift */; };
+		4B1DB66120F49FC300E60746 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DB65F20F49FC300E60746 /* Emoji.swift */; };
+		4B1DB66320F4A10500E60746 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DB66220F4A10500E60746 /* NewsModel.swift */; };
+		4B22541A20F5CDEC00FE184C /* PostVideoOrArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B22541920F5CDEC00FE184C /* PostVideoOrArticleView.swift */; };
+		4B22541C20F5CDFE00FE184C /* PostVideoOrArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B22541B20F5CDFE00FE184C /* PostVideoOrArticleView.xib */; };
+		4B22542120F5E62D00FE184C /* emoji_sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B22541E20F5E62C00FE184C /* emoji_sort.plist */; };
+		4B22542420F5E66A00FE184C /* emoji_mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B22542320F5E66A00FE184C /* emoji_mapping.plist */; };
+		4B22542720F5E92900FE184C /* DongtaiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B22542520F5E92900FE184C /* DongtaiCollectionViewCell.swift */; };
+		4B22542820F5E92900FE184C /* DongtaiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B22542620F5E92900FE184C /* DongtaiCollectionViewCell.xib */; };
 		4B29D24620F33BE0001B9486 /* UserDetailBottomPushController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29D24520F33BE0001B9486 /* UserDetailBottomPushController.swift */; };
 		4B29D24820F33DA6001B9486 /* UserDetailBottomPopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29D24720F33DA6001B9486 /* UserDetailBottomPopController.swift */; };
 		4B29D24A20F33DC0001B9486 /* UserDetailBottomPopController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B29D24920F33DC0001B9486 /* UserDetailBottomPopController.storyboard */; };
 		4B29D24C20F342E8001B9486 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29D24B20F342E8001B9486 /* PopoverAnimator.swift */; };
 		4B29D24E20F344F0001B9486 /* MyPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29D24D20F344F0001B9486 /* MyPresentationController.swift */; };
 		4B35BCE020E3827F009AD9F7 /* OfflineDownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35BCDF20E3827F009AD9F7 /* OfflineDownloadController.swift */; };
-		4B76151320DF943200CD7D6D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76151220DF943200CD7D6D /* UIView+Extension.swift */; };
-		4B76151520DF94D000CD7D6D /* UITabelView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76151420DF94D000CD7D6D /* UITabelView+Extension.swift */; };
-		4B76151720DF96F800CD7D6D /* UICollectionView_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76151620DF96F800CD7D6D /* UICollectionView_Extension.swift */; };
 		4B76151A20DFC83400CD7D6D /* MyConcernCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76151820DFC83400CD7D6D /* MyConcernCell.swift */; };
 		4B76151B20DFC83400CD7D6D /* MyConcernCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B76151920DFC83400CD7D6D /* MyConcernCell.xib */; };
 		4BA9D07A20D4EC3D00E54049 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BA9D07920D4EC3D00E54049 /* Assets.xcassets */; };
@@ -33,13 +42,17 @@
 		4BA9D0D420D5458800E54049 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0C920D5458800E54049 /* MyNavigationController.swift */; };
 		4BA9D0D520D5458800E54049 /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0CC20D5458800E54049 /* MyTabBar.swift */; };
 		4BA9D0D720D54D1200E54049 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0D620D54D1200E54049 /* Const.swift */; };
-		4BA9D0DA20D54E8B00E54049 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA9D0D920D54E8B00E54049 /* UIColor+Extension.swift */; };
 		4BB32DF620F4505F00B12036 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB32DF520F4505F00B12036 /* NavigationBarView.swift */; };
 		4BB32DF820F4507700B12036 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB32DF720F4507700B12036 /* NavigationBarView.xib */; };
 		4BB32DFA20F45D7700B12036 /* RelationRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB32DF920F45D7700B12036 /* RelationRecommendView.swift */; };
 		4BB32DFC20F45D8C00B12036 /* RelationRecommendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB32DFB20F45D8C00B12036 /* RelationRecommendView.xib */; };
 		4BB32DFF20F462DE00B12036 /* RelationRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB32DFD20F462DE00B12036 /* RelationRecommendCell.swift */; };
 		4BB32E0020F462DE00B12036 /* RelationRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB32DFE20F462DE00B12036 /* RelationRecommendCell.xib */; };
+		4BB7FAE820F74DD300B2B50C /* DongtaiOriginThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7FAE720F74DD300B2B50C /* DongtaiOriginThreadView.swift */; };
+		4BB7FAEA20F74DEB00B2B50C /* DongtaiOriginThreadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB7FAE920F74DEB00B2B50C /* DongtaiOriginThreadView.xib */; };
+		4BB7FAEC20F7507300B2B50C /* DongtaiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7FAEB20F7507300B2B50C /* DongtaiCollectionView.swift */; };
+		4BB7FAEE20F75C3E00B2B50C /* DongtaiCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB7FAED20F75C3E00B2B50C /* DongtaiCollectionView.xib */; };
+		4BB7FAF020F75F7100B2B50C /* UIKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7FAEF20F75F7100B2B50C /* UIKit+Extension.swift */; };
 		4BC2BD3320E0E4A8006B8BB4 /* NoLoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3220E0E4A8006B8BB4 /* NoLoginHeaderView.swift */; };
 		4BC2BD3520E0E4BA006B8BB4 /* NoLoginHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3420E0E4BA006B8BB4 /* NoLoginHeaderView.xib */; };
 		4BC2BD3720E10539006B8BB4 /* MyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3620E10539006B8BB4 /* MyTheme.swift */; };
@@ -91,15 +104,24 @@
 		063693A70ED144B284B1353D /* Pods_MyProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B08CF3E20DA42BB00C83997 /* MyFirstSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFirstSectionCell.swift; sourceTree = "<group>"; };
 		4B08CF3F20DA42BB00C83997 /* MyFirstSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyFirstSectionCell.xib; sourceTree = "<group>"; };
+		4B1DB65820F49B6800E60746 /* UserDetailDongTaiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailDongTaiCell.swift; sourceTree = "<group>"; };
+		4B1DB65920F49B6800E60746 /* UserDetailDongTaiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailDongTaiCell.xib; sourceTree = "<group>"; };
+		4B1DB65C20F49FBA00E60746 /* Foundation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Extension.swift"; sourceTree = "<group>"; };
+		4B1DB65E20F49FC300E60746 /* Calculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
+		4B1DB65F20F49FC300E60746 /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		4B1DB66220F4A10500E60746 /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		4B22541920F5CDEC00FE184C /* PostVideoOrArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVideoOrArticleView.swift; sourceTree = "<group>"; };
+		4B22541B20F5CDFE00FE184C /* PostVideoOrArticleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostVideoOrArticleView.xib; sourceTree = "<group>"; };
+		4B22541E20F5E62C00FE184C /* emoji_sort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_sort.plist; sourceTree = "<group>"; };
+		4B22542320F5E66A00FE184C /* emoji_mapping.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_mapping.plist; sourceTree = "<group>"; };
+		4B22542520F5E92900FE184C /* DongtaiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiCollectionViewCell.swift; sourceTree = "<group>"; };
+		4B22542620F5E92900FE184C /* DongtaiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiCollectionViewCell.xib; sourceTree = "<group>"; };
 		4B29D24520F33BE0001B9486 /* UserDetailBottomPushController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailBottomPushController.swift; sourceTree = "<group>"; };
 		4B29D24720F33DA6001B9486 /* UserDetailBottomPopController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailBottomPopController.swift; sourceTree = "<group>"; };
 		4B29D24920F33DC0001B9486 /* UserDetailBottomPopController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetailBottomPopController.storyboard; sourceTree = "<group>"; };
 		4B29D24B20F342E8001B9486 /* PopoverAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		4B29D24D20F344F0001B9486 /* MyPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPresentationController.swift; sourceTree = "<group>"; };
 		4B35BCDF20E3827F009AD9F7 /* OfflineDownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineDownloadController.swift; sourceTree = "<group>"; };
-		4B76151220DF943200CD7D6D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		4B76151420DF94D000CD7D6D /* UITabelView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabelView+Extension.swift"; sourceTree = "<group>"; };
-		4B76151620DF96F800CD7D6D /* UICollectionView_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView_Extension.swift; sourceTree = "<group>"; };
 		4B76151820DFC83400CD7D6D /* MyConcernCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConcernCell.swift; sourceTree = "<group>"; };
 		4B76151920DFC83400CD7D6D /* MyConcernCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyConcernCell.xib; sourceTree = "<group>"; };
 		4BA9D06F20D4EC3C00E54049 /* MyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,13 +143,17 @@
 		4BA9D0C920D5458800E54049 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		4BA9D0CC20D5458800E54049 /* MyTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
 		4BA9D0D620D54D1200E54049 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
-		4BA9D0D920D54E8B00E54049 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		4BB32DF520F4505F00B12036 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		4BB32DF720F4507700B12036 /* NavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
 		4BB32DF920F45D7700B12036 /* RelationRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationRecommendView.swift; sourceTree = "<group>"; };
 		4BB32DFB20F45D8C00B12036 /* RelationRecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelationRecommendView.xib; sourceTree = "<group>"; };
 		4BB32DFD20F462DE00B12036 /* RelationRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationRecommendCell.swift; sourceTree = "<group>"; };
 		4BB32DFE20F462DE00B12036 /* RelationRecommendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelationRecommendCell.xib; sourceTree = "<group>"; };
+		4BB7FAE720F74DD300B2B50C /* DongtaiOriginThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiOriginThreadView.swift; sourceTree = "<group>"; };
+		4BB7FAE920F74DEB00B2B50C /* DongtaiOriginThreadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiOriginThreadView.xib; sourceTree = "<group>"; };
+		4BB7FAEB20F7507300B2B50C /* DongtaiCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiCollectionView.swift; sourceTree = "<group>"; };
+		4BB7FAED20F75C3E00B2B50C /* DongtaiCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiCollectionView.xib; sourceTree = "<group>"; };
+		4BB7FAEF20F75F7100B2B50C /* UIKit+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
 		4BC2BD3220E0E4A8006B8BB4 /* NoLoginHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLoginHeaderView.swift; sourceTree = "<group>"; };
 		4BC2BD3420E0E4BA006B8BB4 /* NoLoginHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoLoginHeaderView.xib; sourceTree = "<group>"; };
 		4BC2BD3620E10539006B8BB4 /* MyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTheme.swift; sourceTree = "<group>"; };
@@ -287,6 +313,7 @@
 		4BA9D0B220D5458800E54049 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4B1DB66220F4A10500E60746 /* NewsModel.swift */,
 				4BC3A9C520EA074C0039BBE1 /* HomeNewsTitle.swift */,
 			);
 			path = Model;
@@ -366,6 +393,8 @@
 		4BA9D0BE20D5458800E54049 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				4B22542320F5E66A00FE184C /* emoji_mapping.plist */,
+				4B22541E20F5E62C00FE184C /* emoji_sort.plist */,
 				4BC2BD3820E10700006B8BB4 /* Theme */,
 				4BA9D0BF20D5458800E54049 /* AppDelegate.swift */,
 				4BA9D0C020D5458800E54049 /* Info.plist */,
@@ -438,6 +467,16 @@
 				4BB32DFB20F45D8C00B12036 /* RelationRecommendView.xib */,
 				4BB32DFD20F462DE00B12036 /* RelationRecommendCell.swift */,
 				4BB32DFE20F462DE00B12036 /* RelationRecommendCell.xib */,
+				4B1DB65820F49B6800E60746 /* UserDetailDongTaiCell.swift */,
+				4B1DB65920F49B6800E60746 /* UserDetailDongTaiCell.xib */,
+				4B22541920F5CDEC00FE184C /* PostVideoOrArticleView.swift */,
+				4B22541B20F5CDFE00FE184C /* PostVideoOrArticleView.xib */,
+				4B22542520F5E92900FE184C /* DongtaiCollectionViewCell.swift */,
+				4B22542620F5E92900FE184C /* DongtaiCollectionViewCell.xib */,
+				4BB7FAE720F74DD300B2B50C /* DongtaiOriginThreadView.swift */,
+				4BB7FAE920F74DEB00B2B50C /* DongtaiOriginThreadView.xib */,
+				4BB7FAEB20F7507300B2B50C /* DongtaiCollectionView.swift */,
+				4BB7FAED20F75C3E00B2B50C /* DongtaiCollectionView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -481,10 +520,8 @@
 		4BA9D0D820D54E7600E54049 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4BA9D0D920D54E8B00E54049 /* UIColor+Extension.swift */,
-				4B76151220DF943200CD7D6D /* UIView+Extension.swift */,
-				4B76151420DF94D000CD7D6D /* UITabelView+Extension.swift */,
-				4B76151620DF96F800CD7D6D /* UICollectionView_Extension.swift */,
+				4BB7FAEF20F75F7100B2B50C /* UIKit+Extension.swift */,
+				4B1DB65C20F49FBA00E60746 /* Foundation+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -501,6 +538,8 @@
 		4BD2078D20D605A9004AAB06 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4B1DB65E20F49FC300E60746 /* Calculate.swift */,
+				4B1DB65F20F49FC300E60746 /* Emoji.swift */,
 				4BD2078E20D60A41004AAB06 /* NetworkTool.swift */,
 				4BC2BD3620E10539006B8BB4 /* MyTheme.swift */,
 				4BC3A9CF20EA1A4C0039BBE1 /* SQLiteManager.swift */,
@@ -623,15 +662,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B22542820F5E92900FE184C /* DongtaiCollectionViewCell.xib in Resources */,
+				4B22541C20F5CDFE00FE184C /* PostVideoOrArticleView.xib in Resources */,
 				4BB32E0020F462DE00B12036 /* RelationRecommendCell.xib in Resources */,
 				4BA9D07D20D4EC3D00E54049 /* LaunchScreen.storyboard in Resources */,
+				4B22542120F5E62D00FE184C /* emoji_sort.plist in Resources */,
+				4BB7FAEA20F74DEB00B2B50C /* DongtaiOriginThreadView.xib in Resources */,
 				4B76151B20DFC83400CD7D6D /* MyConcernCell.xib in Resources */,
 				4BCE168020E33880009723C5 /* SettingCell.xib in Resources */,
+				4B1DB65B20F49B6800E60746 /* UserDetailDongTaiCell.xib in Resources */,
+				4BB7FAEE20F75C3E00B2B50C /* DongtaiCollectionView.xib in Resources */,
 				4BD39C8A20EC649D006617DD /* UserDetailViewController.xib in Resources */,
 				4BC2BD3520E0E4BA006B8BB4 /* NoLoginHeaderView.xib in Resources */,
 				4BD4DDEB20D94AE20002D3FA /* MyOtherCell.xib in Resources */,
 				4BB32DF820F4507700B12036 /* NavigationBarView.xib in Resources */,
 				4B08CF4120DA42BB00C83997 /* MyFirstSectionCell.xib in Resources */,
+				4B22542420F5E66A00FE184C /* emoji_mapping.plist in Resources */,
 				4BD39C8E20EC6946006617DD /* UserDetailHeaderView.xib in Resources */,
 				4BA9D07A20D4EC3D00E54049 /* Assets.xcassets in Resources */,
 				4BB32DFC20F45D8C00B12036 /* RelationRecommendView.xib in Resources */,
@@ -725,6 +771,7 @@
 				4BD2078F20D60A41004AAB06 /* NetworkTool.swift in Sources */,
 				4BDF19D420E1EAA1007940C7 /* MoreLoginViewController.swift in Sources */,
 				4BCE167F20E33880009723C5 /* SettingCell.swift in Sources */,
+				4BB7FAEC20F7507300B2B50C /* DongtaiCollectionView.swift in Sources */,
 				4BC3A9C320EA046A0039BBE1 /* OfflineDownloadCell.swift in Sources */,
 				4BC2BD3720E10539006B8BB4 /* MyTheme.swift in Sources */,
 				4BA9D0D020D5458800E54049 /* AppDelegate.swift in Sources */,
@@ -732,12 +779,15 @@
 				4BC2BD3320E0E4A8006B8BB4 /* NoLoginHeaderView.swift in Sources */,
 				4B29D24620F33BE0001B9486 /* UserDetailBottomPushController.swift in Sources */,
 				4B08CF4020DA42BB00C83997 /* MyFirstSectionCell.swift in Sources */,
+				4B22541A20F5CDEC00FE184C /* PostVideoOrArticleView.swift in Sources */,
 				4BC3A9C620EA074C0039BBE1 /* HomeNewsTitle.swift in Sources */,
+				4BB7FAE820F74DD300B2B50C /* DongtaiOriginThreadView.swift in Sources */,
+				4BB7FAF020F75F7100B2B50C /* UIKit+Extension.swift in Sources */,
 				4BB32DFF20F462DE00B12036 /* RelationRecommendCell.swift in Sources */,
-				4B76151720DF96F800CD7D6D /* UICollectionView_Extension.swift in Sources */,
+				4B1DB65D20F49FBB00E60746 /* Foundation+Extension.swift in Sources */,
 				4BC3A9D020EA1A4C0039BBE1 /* SQLiteManager.swift in Sources */,
-				4B76151320DF943200CD7D6D /* UIView+Extension.swift in Sources */,
 				4BA9D0CE20D5458800E54049 /* VideoViewController.swift in Sources */,
+				4B1DB66120F49FC300E60746 /* Emoji.swift in Sources */,
 				4B29D24C20F342E8001B9486 /* PopoverAnimator.swift in Sources */,
 				4BD39C8920EC649D006617DD /* UserDetailViewController.swift in Sources */,
 				4BA9D0CD20D5458800E54049 /* HomeViewController.swift in Sources */,
@@ -748,6 +798,7 @@
 				4BCE167A20E33501009723C5 /* MyCellModel.swift in Sources */,
 				4B29D24E20F344F0001B9486 /* MyPresentationController.swift in Sources */,
 				4BD4DDEA20D94AE20002D3FA /* MyOtherCell.swift in Sources */,
+				4B1DB66320F4A10500E60746 /* NewsModel.swift in Sources */,
 				4BD7D80120EF43120083B8B1 /* UserDetail.swift in Sources */,
 				4BCDBBF820F3114800E0E291 /* UserDetailBottomView.swift in Sources */,
 				4BA9D0D220D5458800E54049 /* MineViewController.swift in Sources */,
@@ -755,11 +806,12 @@
 				4BDF19D820E23F77007940C7 /* SettingViewController.swift in Sources */,
 				4BA9D0D320D5458800E54049 /* MyTabBarController.swift in Sources */,
 				4BA9D0D720D54D1200E54049 /* Const.swift in Sources */,
-				4BA9D0DA20D54E8B00E54049 /* UIColor+Extension.swift in Sources */,
 				4BB32DFA20F45D7700B12036 /* RelationRecommendView.swift in Sources */,
+				4B22542720F5E92900FE184C /* DongtaiCollectionViewCell.swift in Sources */,
+				4B1DB66020F49FC300E60746 /* Calculate.swift in Sources */,
 				4B29D24820F33DA6001B9486 /* UserDetailBottomPopController.swift in Sources */,
 				4BD39C8C20EC6932006617DD /* UserDetailHeaderView.swift in Sources */,
-				4B76151520DF94D000CD7D6D /* UITabelView+Extension.swift in Sources */,
+				4B1DB65A20F49B6800E60746 /* UserDetailDongTaiCell.swift in Sources */,
 				4BCE167C20E33524009723C5 /* SettingModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

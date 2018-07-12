@@ -28,30 +28,42 @@ class UserDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.white
-        scrollView.delegate = self
-        scrollView.addSubview(headerView)
-        view.addSubview(navigationBar)
-        navigationBar.goBackButtonClicked={
-            self.navigationController?.popViewController(animated: true)
-        }
-        scrollView.contentSize = CGSize(width: screenWidth, height: 1000)
+        view.theme_backgroundColor = "colors.cellBackgroundColor"
+        bottomView.theme_backgroundColor = "colors.cellBackgroundColor"
+//        view.backgroundColor = UIColor.white
         //设置约束，避免bottomView顶到边界
         bottomViewBottom.constant = isIPhoneX ? 34 : 0
         view.layoutIfNeeded()
+        scrollView.delegate = self
         
+        view.addSubview(navigationBar)
+        navigationBar.goBackButtonClicked={[weak self] in
+            self!.navigationController?.popViewController(animated: true)
+        }
+        
+//        userId = 8
         NetworkTool.loadUserDetail(user_id: userId) { (userDetail) in
-            self.userDetail = userDetail
-            self.headerView.userDetail = userDetail
-            self.navigationBar.userDetail = userDetail
-            if userDetail.bottom_tab.count == 0{
-                self.bottomViewBottom.constant = 0
-                self.view.layoutIfNeeded()
-            }else{
-                //赋值给bottomview
-                self.bottomView.addSubview(self.mybottomView)
-                self.mybottomView.bottomTabs = userDetail.bottom_tab
-            }
+            //获取用户详情的动态列表数据
+            NetworkTool.loadUserDetailDongtaiList(user_id: self.userId, completionHandler: { (dongtais) in
+                self.scrollView.addSubview(self.headerView)
+                self.userDetail = userDetail
+                self.headerView.userDetail = userDetail
+                self.navigationBar.userDetail = userDetail
+                self.headerView.dongtais = dongtais
+                if userDetail.bottom_tab.count == 0{
+                    self.headerView.height = 969 - 44
+                    self.bottomViewBottom.constant = 0
+                    self.bottomViewHeight.constant = 0
+                    self.view.layoutIfNeeded()
+                }else{
+                    //赋值给bottomview
+                    self.headerView.height = 969
+                    self.bottomView.addSubview(self.mybottomView)
+                    self.mybottomView.bottomTabs = userDetail.bottom_tab
+                }
+                self.scrollView.contentSize = CGSize(width: screenWidth, height: self.headerView.height)
+            })
+            
         }
     }
     
@@ -103,6 +115,11 @@ extension UserDetailViewController: UIScrollViewDelegate{
 //            headerView.backgroundImageView.frame = CGRect(x: -screenWidth * (f - 1) * 0.5, y: offsetY, width: screenWidth, height: totalOffset)
             headerView.backgroundImageView.frame = CGRect(x: 0, y: offsetY, width: screenWidth, height: totalOffset)
             navigationBar.backgroundColor = UIColor(white: 1.0, alpha: 0.0)
+        }else if offsetY == 0 {
+            for subview in headerView.bottomScrollView.subviews {
+                let tableview = subview as! UITableView
+                tableview.isScrollEnabled = false
+            }
         }else{
             let alpha:CGFloat = (offsetY + 44) / 58
             navigationBar.backgroundColor = UIColor(white: 1.0, alpha: alpha)
@@ -129,6 +146,17 @@ extension UserDetailViewController: UIScrollViewDelegate{
                 navigationBar.nameLabel.textColor = UIColor(r: 0, g: 0, b: 0, alpha: alpha1)
                 navigationBar.concernButton.alpha = alpha1
             }
+            //设置 headerView 的 topTab 黏住顶部
+            //14 + headerView.topTabView.frame.minY = 215
+            if offsetY >= (14 + headerView.topTabView.frame.minY){
+                headerView.y = offsetY - 215
+                for subview in headerView.bottomScrollView.subviews {
+                    let tableview = subview as! UITableView
+                    tableview.isScrollEnabled = true
+                }
+            }else{
+                headerView.y = 0
+            }
         }
         
         
@@ -151,9 +179,9 @@ extension UserDetailViewController: UserDetailBottomViewDelegate{
             let popoverVC = sb.instantiateViewController(withIdentifier: "\(UserDetailBottomPopController.self)") as! UserDetailBottomPopController
             popoverVC.children = bottomTab.children
             popoverVC.modalPresentationStyle = .custom
-            popoverVC.didSelectedChild = {
+            popoverVC.didSelectedChild = {[weak self] in
                 bottomPushVC.url = $0.value
-                self.navigationController?.pushViewController(bottomPushVC, animated: true)
+                self!.navigationController?.pushViewController(bottomPushVC, animated: true)
             }
             let popoverAnimator = PopoverAnimator()
             //转换 frame
@@ -161,7 +189,7 @@ extension UserDetailViewController: UserDetailBottomViewDelegate{
             let popWidth = (screenWidth - CGFloat(userDetail!.bottom_tab.count + 1) * 20) / CGFloat(userDetail!.bottom_tab.count)
             let popX = CGFloat(button.tag) * (popWidth + 20) + 20
             let popHeight = CGFloat(bottomTab.children.count) * 40 + 25
-            popoverAnimator.presentFrame = CGRect(x: popX, y: rect.origin.y, width: popWidth, height: popHeight)
+            popoverAnimator.presentFrame = CGRect(x: popX, y: rect.origin.y - popHeight, width: popWidth, height: popHeight)
             popoverVC.transitioningDelegate = popoverAnimator
             present(popoverVC, animated: true, completion: nil)
         }

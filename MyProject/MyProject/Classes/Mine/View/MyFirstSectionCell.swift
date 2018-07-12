@@ -13,7 +13,7 @@ protocol MyFirstSectionCellDelegate:class {
     func MyFirstSectionCells(_ firstCell:MyFirstSectionCell,myConcern:MyConcern)
 }
 
-class MyFirstSectionCell: UITableViewCell,RegisterCellOrNib {
+class MyFirstSectionCell: UITableViewCell,RegisterCellFromNib {
     weak var delegate : MyFirstSectionCellDelegate?
     
     //标题
