@@ -53,6 +53,8 @@
 		4BB7FAEC20F7507300B2B50C /* DongtaiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7FAEB20F7507300B2B50C /* DongtaiCollectionView.swift */; };
 		4BB7FAEE20F75C3E00B2B50C /* DongtaiCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB7FAED20F75C3E00B2B50C /* DongtaiCollectionView.xib */; };
 		4BB7FAF020F75F7100B2B50C /* UIKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7FAEF20F75F7100B2B50C /* UIKit+Extension.swift */; };
+		4BB7FAF220F771EB00B2B50C /* HomeNaviagtionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7FAF120F771EB00B2B50C /* HomeNaviagtionBar.swift */; };
+		4BB7FAF420F7720A00B2B50C /* HomeNaviagtionBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB7FAF320F7720A00B2B50C /* HomeNaviagtionBar.xib */; };
 		4BC2BD3320E0E4A8006B8BB4 /* NoLoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3220E0E4A8006B8BB4 /* NoLoginHeaderView.swift */; };
 		4BC2BD3520E0E4BA006B8BB4 /* NoLoginHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3420E0E4BA006B8BB4 /* NoLoginHeaderView.xib */; };
 		4BC2BD3720E10539006B8BB4 /* MyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3620E10539006B8BB4 /* MyTheme.swift */; };
@@ -63,6 +65,8 @@
 		4BC3A9C620EA074C0039BBE1 /* HomeNewsTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3A9C520EA074C0039BBE1 /* HomeNewsTitle.swift */; };
 		4BC3A9CC20EA1A000039BBE1 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC3A9CB20EA1A000039BBE1 /* libsqlite3.0.tbd */; };
 		4BC3A9D020EA1A4C0039BBE1 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3A9CF20EA1A4C0039BBE1 /* SQLiteManager.swift */; };
+		4BC822B820F85973000D0522 /* WeitoutiaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC822B620F85973000D0522 /* WeitoutiaoViewController.swift */; };
+		4BC822B920F85973000D0522 /* WeitoutiaoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC822B720F85973000D0522 /* WeitoutiaoViewController.xib */; };
 		4BCDBBF820F3114800E0E291 /* UserDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDBBF720F3114800E0E291 /* UserDetailBottomView.swift */; };
 		4BCE167820E3324D009723C5 /* settingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BCE167720E3324D009723C5 /* settingPlist.plist */; };
 		4BCE167A20E33501009723C5 /* MyCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE167920E33501009723C5 /* MyCellModel.swift */; };
@@ -154,6 +158,8 @@
 		4BB7FAEB20F7507300B2B50C /* DongtaiCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiCollectionView.swift; sourceTree = "<group>"; };
 		4BB7FAED20F75C3E00B2B50C /* DongtaiCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiCollectionView.xib; sourceTree = "<group>"; };
 		4BB7FAEF20F75F7100B2B50C /* UIKit+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
+		4BB7FAF120F771EB00B2B50C /* HomeNaviagtionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNaviagtionBar.swift; sourceTree = "<group>"; };
+		4BB7FAF320F7720A00B2B50C /* HomeNaviagtionBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNaviagtionBar.xib; sourceTree = "<group>"; };
 		4BC2BD3220E0E4A8006B8BB4 /* NoLoginHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLoginHeaderView.swift; sourceTree = "<group>"; };
 		4BC2BD3420E0E4BA006B8BB4 /* NoLoginHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoLoginHeaderView.xib; sourceTree = "<group>"; };
 		4BC2BD3620E10539006B8BB4 /* MyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTheme.swift; sourceTree = "<group>"; };
@@ -166,6 +172,8 @@
 		4BC3A9CB20EA1A000039BBE1 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		4BC3A9CD20EA1A180039BBE1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4BC3A9CF20EA1A4C0039BBE1 /* SQLiteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		4BC822B620F85973000D0522 /* WeitoutiaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeitoutiaoViewController.swift; sourceTree = "<group>"; };
+		4BC822B720F85973000D0522 /* WeitoutiaoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeitoutiaoViewController.xib; sourceTree = "<group>"; };
 		4BCDBBF720F3114800E0E291 /* UserDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailBottomView.swift; sourceTree = "<group>"; };
 		4BCE167720E3324D009723C5 /* settingPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = settingPlist.plist; sourceTree = "<group>"; };
 		4BCE167920E33501009723C5 /* MyCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellModel.swift; sourceTree = "<group>"; };
@@ -282,6 +290,7 @@
 		4BA9D0AE20D5458800E54049 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4BC822B220F8593E000D0522 /* Weitoutiao */,
 				4BA9D0AF20D5458800E54049 /* Home */,
 				4BA9D0B420D5458800E54049 /* Video */,
 				4BA9D0B920D5458800E54049 /* Huoshan */,
@@ -322,6 +331,8 @@
 		4BA9D0B320D5458800E54049 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4BB7FAF120F771EB00B2B50C /* HomeNaviagtionBar.swift */,
+				4BB7FAF320F7720A00B2B50C /* HomeNaviagtionBar.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -535,6 +546,39 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		4BC822B220F8593E000D0522 /* Weitoutiao */ = {
+			isa = PBXGroup;
+			children = (
+				4BC822B320F8593E000D0522 /* Controller */,
+				4BC822B420F8593E000D0522 /* Model */,
+				4BC822B520F8593E000D0522 /* View */,
+			);
+			path = Weitoutiao;
+			sourceTree = "<group>";
+		};
+		4BC822B320F8593E000D0522 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4BC822B620F85973000D0522 /* WeitoutiaoViewController.swift */,
+				4BC822B720F85973000D0522 /* WeitoutiaoViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4BC822B420F8593E000D0522 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4BC822B520F8593E000D0522 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4BD2078D20D605A9004AAB06 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,7 +716,9 @@
 				4BCE168020E33880009723C5 /* SettingCell.xib in Resources */,
 				4B1DB65B20F49B6800E60746 /* UserDetailDongTaiCell.xib in Resources */,
 				4BB7FAEE20F75C3E00B2B50C /* DongtaiCollectionView.xib in Resources */,
+				4BB7FAF420F7720A00B2B50C /* HomeNaviagtionBar.xib in Resources */,
 				4BD39C8A20EC649D006617DD /* UserDetailViewController.xib in Resources */,
+				4BC822B920F85973000D0522 /* WeitoutiaoViewController.xib in Resources */,
 				4BC2BD3520E0E4BA006B8BB4 /* NoLoginHeaderView.xib in Resources */,
 				4BD4DDEB20D94AE20002D3FA /* MyOtherCell.xib in Resources */,
 				4BB32DF820F4507700B12036 /* NavigationBarView.xib in Resources */,
@@ -786,6 +832,7 @@
 				4BB32DFF20F462DE00B12036 /* RelationRecommendCell.swift in Sources */,
 				4B1DB65D20F49FBB00E60746 /* Foundation+Extension.swift in Sources */,
 				4BC3A9D020EA1A4C0039BBE1 /* SQLiteManager.swift in Sources */,
+				4BB7FAF220F771EB00B2B50C /* HomeNaviagtionBar.swift in Sources */,
 				4BA9D0CE20D5458800E54049 /* VideoViewController.swift in Sources */,
 				4B1DB66120F49FC300E60746 /* Emoji.swift in Sources */,
 				4B29D24C20F342E8001B9486 /* PopoverAnimator.swift in Sources */,
@@ -803,6 +850,7 @@
 				4BCDBBF820F3114800E0E291 /* UserDetailBottomView.swift in Sources */,
 				4BA9D0D220D5458800E54049 /* MineViewController.swift in Sources */,
 				4BB32DF620F4505F00B12036 /* NavigationBarView.swift in Sources */,
+				4BC822B820F85973000D0522 /* WeitoutiaoViewController.swift in Sources */,
 				4BDF19D820E23F77007940C7 /* SettingViewController.swift in Sources */,
 				4BA9D0D320D5458800E54049 /* MyTabBarController.swift in Sources */,
 				4BA9D0D720D54D1200E54049 /* Const.swift in Sources */,

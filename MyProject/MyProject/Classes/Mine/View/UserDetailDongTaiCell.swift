@@ -17,6 +17,7 @@ class UserDetailDongTaiCell: UITableViewCell,RegisterCellFromNib {
             theme_backgroundColor = "colors.cellBackgroundColor"
             avatarImageView.kf.setImage(with: URL(string: dongtai!.user.avatar_url))
             nameLabel.text = dongtai!.user.screen_name
+            modifyTimeLabel.text = "· " + dongtai!.createTime
             likeButton.setTitle(dongtai!.diggCount, for: .normal)
             commentButton.setTitle(dongtai!.commentCount, for: .normal)
             forwardButton.setTitle(dongtai!.forwardCount, for: .normal)
@@ -109,11 +110,19 @@ class UserDetailDongTaiCell: UITableViewCell,RegisterCellFromNib {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        nameLabel.theme_textColor = "colors.black"
+        theme_backgroundColor = "colors.cellBackgroundColor"
+        nameLabel.theme_textColor = "colors.grayColor230"
+        modifyTimeLabel.theme_textColor = "colors.grayColor230"
         likeButton.theme_setTitleColor("colors.black", forState: .normal)
         commentButton.theme_setTitleColor("colors.black", forState: .normal)
         forwardButton.theme_setTitleColor("colors.black", forState: .normal)
+        likeButton.theme_setImage("images.feed_like_24x24_", forState: .normal)
+        likeButton.theme_setImage("images.feed_like_press_24x24_", forState: .selected)
+        commentButton.theme_setImage("images.comment_feed_24x24_", forState: .normal)
+        moreButton.theme_setImage("images.morebutton_dynamic_14x8_", forState: .normal)
+        forwardButton.theme_setImage("images.feed_share_24x24_", forState: .normal)
+        contentLabel.theme_textColor = "colors.black"
+        allContentLabel.theme_backgroundColor = "colors.cellBackgroundColor"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -20,7 +20,7 @@ class MyTabBarController: UITabBarController {
         //添加子控制器
         addChildViewController()
         
-        //接收
+        //注册通知
         NotificationCenter.default.addObserver(self, selector: #selector(reciveDayOrNightButtonClicked(notification:)), name: NSNotification.Name(rawValue: "dayOrNightButtonClicked"), object: nil)
     }
     //接收按钮点击的通知
@@ -35,8 +35,8 @@ class MyTabBarController: UITabBarController {
                     setNightChildController(controller: childController, imageName: "video")
                 case "小视频":
                     setNightChildController(controller: childController, imageName: "huoshan")
-                case "未登录":
-                    setNightChildController(controller: childController, imageName: "no_login")
+                case "微头条":
+                    setNightChildController(controller: childController, imageName: "weitoutiao")
                 default:
                     break
                 }
@@ -50,8 +50,8 @@ class MyTabBarController: UITabBarController {
                     setDayChildController(controller: childController, imageName: "video")
                 case "小视频":
                     setDayChildController(controller: childController, imageName: "huoshan")
-                case "未登录":
-                    setDayChildController(controller: childController, imageName: "no_login")
+                case "微头条":
+                    setDayChildController(controller: childController, imageName: "weitoutiao")
                 default:
                     break
                 }
@@ -59,27 +59,27 @@ class MyTabBarController: UITabBarController {
         }
     }
     
-    //设置夜间控制器
+    ///设置夜间控制器
     private func setNightChildController(controller:UIViewController,imageName:String){
         controller.tabBarItem.image = UIImage(named: imageName+"_tabbar_night_32x32_")
         controller.tabBarItem.selectedImage = UIImage(named: imageName+"_tabbar_press_night_32x32_")
     }
-    //设置日间控制器
+    ///设置日间控制器
     private func setDayChildController(controller:UIViewController,imageName:String){
         controller.tabBarItem.image = UIImage(named: imageName+"_tabbar_32x32_")
         controller.tabBarItem.selectedImage = UIImage(named: imageName+"_tabbar_press_32x32_")
     }
-    //添加子控制器
+    ///添加子控制器
     func addChildViewController() {
         setChildViewController(HomeViewController(), title: "首页", imageName: "home")
         setChildViewController(VideoViewController(), title: "视频", imageName: "video")
+        setChildViewController(WeitoutiaoViewController(), title: "微头条", imageName: "weitoutiao")
         setChildViewController(HuoshanViewController(), title: "小视频", imageName: "huoshan")
-        setChildViewController(MineViewController(), title: "未登录", imageName: "no_login")
         //tabar是readonly属性，不能直接修改，利用KVC把readonly属性的权限改过来
         setValue(MyTabBar(), forKey: "tabBar")
     }
     
-    //初始化子控制器
+    ///初始化子控制器
     func setChildViewController(_ childController: UIViewController, title:String, imageName:String) {
         //设置 tabbar 文字和图片
         if UserDefaults.standard.bool(forKey: isNight) {

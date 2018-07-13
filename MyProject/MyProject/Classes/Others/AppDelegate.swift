@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ThemeManager.setTheme(plistName: UserDefaults.standard.bool(forKey: isNight) ? "night_theme" :"default_theme", path: .mainBundle)
         
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.theme_backgroundColor = "colors.navigationBarTintColor"
         window?.rootViewController = MyTabBarController()
         window?.makeKeyAndVisible()
         return true

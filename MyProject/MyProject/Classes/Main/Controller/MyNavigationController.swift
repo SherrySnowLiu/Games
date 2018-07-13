@@ -15,11 +15,30 @@ class MyNavigationController: UINavigationController {
 
         //获取全局
         let navigationBar = UINavigationBar.appearance()
-        navigationBar.theme_barTintColor = "colors.cellBackgroundColor"
-        navigationBar.theme_tintColor = "colors.navigationBarTintColor"
+//        navigationBar.theme_barTintColor = "colors.cellBackgroundColor"
+        navigationBar.theme_tintColor = "colors.black"
+        
+        if UserDefaults.standard.bool(forKey: isNight) {
+            navigationBar.setBackgroundImage(UIImage(named: "navigation_background_night"), for: .default)
+        }else{
+            navigationBar.setBackgroundImage(UIImage(named: "navigation_background"), for: .default)
+        }
         //全局拖拽手势
         initGlobalPan()
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(reciveDayOrNightButtonClicked(notification:)), name: NSNotification.Name(rawValue: "dayOrNightButtonClicked"), object: nil)
     }
+    
+    //接收按钮点击的通知
+    @objc func reciveDayOrNightButtonClicked(notification:Notification){
+        let selected = notification.object as! Bool
+        if selected {//true，设置为夜间
+            navigationBar.setBackgroundImage(UIImage(named: "navigation_background_night"), for: .default)
+        }else{
+            navigationBar.setBackgroundImage(UIImage(named: "navigation_background"), for: .default)
+        }
+    }
+    
     //拦截push操作
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if viewControllers.count > 0 {

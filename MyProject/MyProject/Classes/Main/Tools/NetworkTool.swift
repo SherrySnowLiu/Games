@@ -12,31 +12,33 @@ import SwiftyJSON
 import SVProgressHUD
 
 protocol NetworkToolProtocol {
-    //-----------首页 home-------------
-    //首页顶部新闻标题的数据
+    //MARK:-----------首页 home-------------
+    //MARK:首页顶部新闻标题的数据
     static func loadHomeNewsTitle(completionHandler:@escaping (_ newsTitles:[homeNewTitle]) -> ())
-    //-----------我的界面 mine-------------
-    //我的界面 cell 的数据
+    //MARK:首页顶部新闻导航栏搜索内容
+    static func loadHomeSearchSuggestInfo(completionHandler:@escaping (_ suggestInfo:String) -> ())
+    //MARK:-----------我的界面 mine-------------
+    //MARK:我的界面 cell 的数据
     static func loadMyCellData(completionHandler:@escaping (_ sections:[[MyCellModel]]) -> ())
-    //我的关注数据
+    //MARK:我的关注数据
     static func loadMyConcern(completionHandler:@escaping (_ concerns:[MyConcern]) -> ())
-    //用户详情数据
+    //MARK:用户详情数据
     static func loadUserDetail(user_id : Int ,completionHandler:@escaping (_ userDetail:UserDetail) -> ())
-    //已关注用户，取消关注
+    //MARK:已关注用户，取消关注
     static func loadRelationUnfollow(user_id : Int ,completionHandler:@escaping (_ user:ConcernUser) -> ())
-    //点击关注按钮，关注用户
+    //MARK:点击关注按钮，关注用户
     static func loadRelationFollow(user_id : Int ,completionHandler:@escaping (_ user:ConcernUser) -> ())
-    //点击了关注按钮，就会出现相关推荐
+    //MARK:点击了关注按钮，就会出现相关推荐
     static func loadRelationUserRecommend(user_id : Int ,completionHandler:@escaping (_ userCard:[UserCard]) -> ())
-    ///获取用户详情的动态列表数据
+    //MARK:获取用户详情的动态列表数据
     static func loadUserDetailDongtaiList(user_id : Int ,completionHandler:@escaping (_ dongtais:[UserDetailDongtai]) -> ())
-    ///获取用户详情的文章列表数据
+    //MARK:获取用户详情的文章列表数据
     static func loadUserDetailArticleList(user_id : Int ,completionHandler:@escaping (_ dongtais:[UserDetailArticleGroup]) -> ())
 }
 
 extension NetworkToolProtocol{
     //-----------首页 home-------------
-    //首页顶部新闻标题的数据
+    ///首页顶部新闻标题的数据
     static func loadHomeNewsTitle(completionHandler:@escaping (_ newsTitles:[homeNewTitle]) -> ()){
         let url = BASE_URL + "/article/category/get_subscribed/v1/?"
         let params = ["device_id":device_id,
@@ -68,9 +70,31 @@ extension NetworkToolProtocol{
             }
         }
     }
+    ///首页顶部新闻导航栏搜索内容
+    static func loadHomeSearchSuggestInfo(completionHandler:@escaping (_ suggestInfo:String) -> ()){
+        let url = BASE_URL + "/search/suggest/homepage_suggest/?"
+        let params = ["device_id":device_id,
+                      "iid":iid]
+        
+        Alamofire.request(url,parameters:params).responseJSON{(response) in
+            guard response.result.isSuccess else{
+                return
+            }
+            if let value = response.result.value{
+                let json = JSON(value)
+                guard json["message"] == "success" else{
+                    return
+                }
+                if let data = json["data"].dictionary{
+                    completionHandler(data["homepage_search_suggest"]!.string!)
+                }
+                
+            }
+        }
+    }
     
     //-----------我的界面 mine-------------
-    //我的界面 cell 的数据
+    ///我的界面 cell 的数据
     static func loadMyCellData(completionHandler:@escaping (_ sections:[[MyCellModel]]) -> ()){
         let url = BASE_URL + "/user/tab/tabs/?"
         let params = ["device_id":device_id]
@@ -96,7 +120,7 @@ extension NetworkToolProtocol{
             }
         }
     }
-    //我的关注数据
+    ///我的关注数据
     static func loadMyConcern(completionHandler:@escaping (_ concerns:[MyConcern]) -> ()){
         let url = BASE_URL + "/concern/v2/follow/my_follow/?"
         let params = ["device_id":device_id]
@@ -120,7 +144,7 @@ extension NetworkToolProtocol{
         
     }
     
-    //用户详情数据
+    ///用户详情数据
     static func loadUserDetail(user_id : Int ,completionHandler:@escaping (_ userDetail:UserDetail) -> ()){
         let url = BASE_URL + "/user/profile/homepage/v4/?"
         let params = ["user_id":user_id,
@@ -150,7 +174,7 @@ extension NetworkToolProtocol{
         }
     }
     
-    //已关注用户，取消关注
+    ///已关注用户，取消关注
     static func loadRelationUnfollow(user_id : Int ,completionHandler:@escaping (_ user:ConcernUser) -> ()){
         let url = BASE_URL + "/2/relation/unfollow/?"
         let params = ["user_id":user_id,
@@ -179,7 +203,7 @@ extension NetworkToolProtocol{
         }
     }
     
-    //点击关注按钮，关注用户
+    ///点击关注按钮，关注用户
     static func loadRelationFollow(user_id : Int ,completionHandler:@escaping (_ user:ConcernUser) -> ()){
         let url = BASE_URL + "/2/relation/follow/v2/?"
         let params = ["user_id":user_id,
