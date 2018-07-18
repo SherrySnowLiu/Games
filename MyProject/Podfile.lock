@@ -3,6 +3,7 @@ PODS:
   - HandyJSON (4.0.0-beta.1)
   - IBAnimatable (5.1.0)
   - Kingfisher (4.8.0)
+  - MJRefresh (3.1.15.3)
   - RxCocoa (4.0.0):
     - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - HandyJSON (~> 4.0.0-beta.1)
   - IBAnimatable
   - Kingfisher
+  - MJRefresh
   - RxCocoa (~> 4.0.0-beta.0)
   - RxSwift (~> 4.0.0-beta.0)
   - SQLite.swift (~> 0.11.4)
@@ -31,6 +33,7 @@ SPEC REPOS:
     - HandyJSON
     - IBAnimatable
     - Kingfisher
+    - MJRefresh
     - RxCocoa
     - RxSwift
     - SQLite.swift
@@ -43,6 +46,7 @@ SPEC CHECKSUMS:
   HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
   IBAnimatable: dd81f8f22e9982b05e8ac50794e4c8988cc300f2
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
@@ -50,6 +54,6 @@ SPEC CHECKSUMS:
   SwiftTheme: 36d71c4eed4b2c401c782cf036e4586c749a8173
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 3e261949dfa2c935c92739b90cc80bb084a8c46b
+PODFILE CHECKSUM: ec85d134838691b2fe517cf1e0f821955a42d245
 
 COCOAPODS: 1.5.3

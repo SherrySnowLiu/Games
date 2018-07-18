@@ -269,7 +269,7 @@
                         <constraint firstItem="PYb-9j-5Cc" firstAttribute="leading" secondItem="SLl-6x-O49" secondAttribute="leading" constant="15" id="yaZ-xV-Xzr"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPr-z2-adT">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPr-z2-adT">
                     <rect key="frame" x="0.0" y="344" width="375" height="625"/>
                 </scrollView>
             </subviews>

@@ -11,6 +11,11 @@ import IBAnimatable
 
 class UserDetailDongTaiCell: UITableViewCell,RegisterCellFromNib {
     
+    //点击了用户
+    var didSelectUserUID : ((_ uid : Int)->())?
+    
+    private let emojiManager = EmojiManager()
+    
     var dongtai:UserDetailDongtai?{
         //赋值
         didSet{
@@ -23,7 +28,17 @@ class UserDetailDongTaiCell: UITableViewCell,RegisterCellFromNib {
             forwardButton.setTitle(dongtai!.forwardCount, for: .normal)
             areaLabel.text = dongtai!.position.position + " "
             readCountLabel.text = dongtai!.readCount + "阅读"
-            contentLabel.text = dongtai!.content
+            contentLabel.attributedText = emojiManager.showEmoji(content: dongtai!.content, font: contentLabel.font)
+            
+            contentLabel.userTapped = {[weak self] (userName ,range) in
+                for userContent in self!.dongtai!.userContents!{
+                    if userContent.name == userName{
+                        self?.didSelectUserUID?(Int(userContent.uid)!)
+                    }
+                    
+                }
+            }
+            
             contentLabelHeight.constant = dongtai!.contentH
             allContentLabel.isHidden = dongtai!.attributedCntentHeight == 110 ? false : true
             
@@ -42,17 +57,23 @@ class UserDetailDongTaiCell: UITableViewCell,RegisterCellFromNib {
             case .postVideoOrArticle, .postVideo, .answerQuestion, .proposeQuestion, .forwardArticle, .postContentAndVideo: //发布了文章或视频
                 middleView.addSubview(postVideoOrArticleView)
                 postVideoOrArticleView.frame = CGRect(x: 15, y: 0, width: screenWidth - 30, height: middleView.height)
-                postVideoOrArticleView.group = dongtai!.group
+                if dongtai!.group.title == ""{
+                    postVideoOrArticleView.origin_group = dongtai!.origin_group
+                }else{
+                    postVideoOrArticleView.group = dongtai!.group
+                }
             case .postContent, .postSmallVideo: //发布了文字内容
                 middleView.addSubview(collectionView)
                 collectionView.frame = CGRect(x: 15, y: 0, width: dongtai!.collectionViewW, height: dongtai!.collectionViewH)
                 collectionView.thumbImageList = dongtai!.thumb_image_list
-            case .commentOrQuoteContent: //引用或评论
+                collectionView.largeImages = dongtai!.large_image_list
+                if dongtai!.item_type == .postSmallVideo{
+                    collectionView.isPostSmallVideo = true
+                }
+            case .commentOrQuoteContent,.commentOrQuoteOthers: //引用或评论
                 middleView.addSubview(originThreadView)
                 originThreadView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: dongtai!.origin_thread.height)
                 originThreadView.originthread = dongtai!.origin_thread
-            case .commentOrQuoteOthers:
-                print("")
             }
             layoutIfNeeded()
         }
@@ -73,13 +94,6 @@ class UserDetailDongTaiCell: UITableViewCell,RegisterCellFromNib {
     ///懒加载 发布视频或文章
     private lazy var collectionView:DongtaiCollectionView = {
         let collectionView = DongtaiCollectionView.loadViewFromNib()
-//        collectionView.llx_registerCell(cell: DongtaiCollectionViewCell.self)
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
-//        collectionView.showsVerticalScrollIndicator = false
-//        collectionView.showsHorizontalScrollIndicator = false
-//        collectionView.isScrollEnabled = false
-//        collectionView.theme_backgroundColor = "colors.cellBackgroundColor"
         return collectionView
     }()
     
@@ -101,7 +115,7 @@ class UserDetailDongTaiCell: UITableViewCell,RegisterCellFromNib {
     @IBOutlet weak var areaLabel: UILabel!
     @IBOutlet weak var readCountLabel: UILabel!
     ///内容
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: RichLabel!
     @IBOutlet weak var contentLabelHeight: NSLayoutConstraint!
     ///全文
     @IBOutlet weak var allContentLabel: UILabel!
@@ -132,25 +146,3 @@ class UserDetailDongTaiCell: UITableViewCell,RegisterCellFromNib {
     }
     
 }
-
-//extension UserDetailDongTaiCell:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return dongtai!.thumb_image_list.count
-//    }
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.llx_dequeueReusableCell(indexPath: indexPath) as DongtaiCollectionViewCell
-//        cell.thumbImage = dongtai!.thumb_image_list[indexPath.item]
-//        return cell
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return Calculate.collectionViewCellSize(dongtai!.thumb_image_list.count)
-//    }
-//}
-
-//class DongtaiCollectionViewFlowLayout: UICollectionViewFlowLayout {
-//    override func prepare() {
-//        super.prepare()
-//        minimumLineSpacing = 5
-//        minimumInteritemSpacing = 5
-//    }
-//}

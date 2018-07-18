@@ -31,9 +31,13 @@ protocol NetworkToolProtocol {
     //MARK:点击了关注按钮，就会出现相关推荐
     static func loadRelationUserRecommend(user_id : Int ,completionHandler:@escaping (_ userCard:[UserCard]) -> ())
     //MARK:获取用户详情的动态列表数据
-    static func loadUserDetailDongtaiList(user_id : Int ,completionHandler:@escaping (_ dongtais:[UserDetailDongtai]) -> ())
+    static func loadUserDetailDongtaiList(user_id : Int,maxCursor:Int ,completionHandler:@escaping (_ cursor:Int,_ dongtais:[UserDetailDongtai]) -> ())
     //MARK:获取用户详情的文章列表数据
-    static func loadUserDetailArticleList(user_id : Int ,completionHandler:@escaping (_ dongtais:[UserDetailArticleGroup]) -> ())
+    static func loadUserDetailArticleList(user_id : Int ,completionHandler:@escaping (_ dongtais:[UserDetailDongtai]) -> ())
+    //MARK:获取用户详情的问答列表数据
+    static func loadUserDetailWendaList(user_id : Int,cursor:String ,completionHandler:@escaping (_ cursor:String,_ wendas:[UserDetailWenda]) -> ())
+    //MARK: 获取用户详情的更多问答列表数据
+    static func loadUserDetailLoadMoreWendaList(userId: Int, cursor: String, completionHandler: @escaping (_ cursor: String,_ wendas: [UserDetailWenda]) -> ())
 }
 
 extension NetworkToolProtocol{
@@ -257,9 +261,12 @@ extension NetworkToolProtocol{
     }
     
     ///获取用户详情的动态列表数据
-    static func loadUserDetailDongtaiList(user_id : Int ,completionHandler:@escaping (_ dongtais:[UserDetailDongtai]) -> ()){
+    static func loadUserDetailDongtaiList(user_id : Int,maxCursor:Int ,completionHandler:@escaping (_ cursor:Int,_ dongtais:[UserDetailDongtai]) -> ()){
         let url = BASE_URL + "/dongtai/list/v14/?"
-        let params = ["user_id":user_id]
+        let params = ["user_id":user_id,
+                      "max_cursor": maxCursor,
+                      "device_id": device_id,
+                      "iid": iid] as [String : Any]
         
         Alamofire.request(url,parameters:params).responseJSON { (response) in
             guard response.result.isSuccess else{
@@ -272,15 +279,17 @@ extension NetworkToolProtocol{
                     return
                 }
                 if let data = json["data"].dictionary {
+                    let max_cursor = data["max_cursor"]!.int
+                    
                     if let datas = data["data"]?.arrayObject {
-                        completionHandler(datas.compactMap({ UserDetailDongtai.deserialize(from: $0 as? Dictionary) }))
+                        completionHandler(max_cursor!,datas.compactMap({ UserDetailDongtai.deserialize(from: $0 as? Dictionary) }))
                     }
                 }
             }
         }
     }
     ///获取用户详情的文章列表数据
-    static func loadUserDetailArticleList(user_id : Int ,completionHandler:@escaping (_ dongtais:[UserDetailArticleGroup]) -> ()){
+    static func loadUserDetailArticleList(user_id : Int ,completionHandler:@escaping (_ dongtais:[UserDetailDongtai]) -> ()){
         let url = BASE_URL + "/dongtai/list/v10/?"
         let params = ["user_id":user_id,
                       "device_id":device_id,
@@ -297,7 +306,72 @@ extension NetworkToolProtocol{
                     return
                 }
                 if let data = json["data"].arrayObject {
-                    completionHandler(data.compactMap({ UserDetailArticleGroup.deserialize(from: $0 as? Dictionary) }))
+                    completionHandler(data.compactMap({ UserDetailDongtai.deserialize(from: $0 as? Dictionary) }))
+                }
+            }
+        }
+    }
+    ///获取用户详情的问答列表数据
+    static func loadUserDetailWendaList(user_id : Int,cursor:String ,completionHandler:@escaping (_ cursor:String,_ wendas:[UserDetailWenda]) -> ()){
+        let url = BASE_URL + "/wenda/profile/wendatab/brow/?"
+        let params = ["other_id": user_id,
+                      "format": "json",
+                      "device_id": device_id,
+                      "iid": iid] as [String : Any]
+        
+        Alamofire.request(url,parameters:params).responseJSON { (response) in
+            guard response.result.isSuccess else{
+                completionHandler(cursor, [])
+                return
+            }
+            if let value = response.result.value{
+                let json = JSON(value)
+                guard json["err_no"] == 0 else{
+                    completionHandler(cursor,[])
+                    return
+                }
+                if let answerQuestions = json["answer_question"].arrayObject {
+                    if answerQuestions.count == 0{
+                        completionHandler(cursor,[])
+                    }else{
+                        let cursor = json["cursor"].string
+                        completionHandler(cursor!,answerQuestions.compactMap({
+                            UserDetailWenda.deserialize(from: $0 as? Dictionary)
+                        }))
+                    }
+                }
+            }
+        }
+    }
+    /// 获取用户详情的更多问答列表数据
+    /// - parameter userId: 用户id
+    /// - parameter cursor: 加载更多数据的指示器
+    /// - parameter completionHandler: 返回动态数据
+    /// - parameter wendas:  问答数据的数组
+    static func loadUserDetailLoadMoreWendaList(userId: Int, cursor: String, completionHandler: @escaping (_ cursor: String,_ wendas: [UserDetailWenda]) -> ()) {
+        
+        let url = BASE_URL + "/wenda/profile/wendatab/loadmore/?"
+        let params = ["other_id": userId,
+                      "format": "json",
+                      "cursor": cursor,
+                      "count": 10,
+                      "offset": "undefined",
+                      "device_id": device_id,
+                      "iid": iid] as [String : Any]
+        
+        Alamofire.request(url, parameters: params).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { completionHandler(cursor, []); return }
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["err_no"] == 0 else { completionHandler(cursor, []); return }
+                if let answerQuestions = json["answer_question"].arrayObject {
+                    if answerQuestions.count == 0 { completionHandler(cursor, []) }
+                    else {
+                        completionHandler(json["cursor"].string!, answerQuestions.compactMap({
+                            UserDetailWenda.deserialize(from: $0 as? Dictionary)
+                        }))
+                    }
                 }
             }
         }

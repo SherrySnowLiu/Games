@@ -24,9 +24,11 @@ class UserDetailViewController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 点击了用户或者话题
+        didSelectTopicOrUser()
 
         view.theme_backgroundColor = "colors.cellBackgroundColor"
         bottomView.theme_backgroundColor = "colors.cellBackgroundColor"
@@ -44,12 +46,14 @@ class UserDetailViewController: UIViewController {
 //        userId = 8
         NetworkTool.loadUserDetail(user_id: userId) { (userDetail) in
             //获取用户详情的动态列表数据
-            NetworkTool.loadUserDetailDongtaiList(user_id: self.userId, completionHandler: { (dongtais) in
+            NetworkTool.loadUserDetailDongtaiList(user_id: self.userId,maxCursor:0, completionHandler: { (cursor,dongtais) in
                 self.scrollView.addSubview(self.headerView)
                 self.userDetail = userDetail
                 self.headerView.userDetail = userDetail
                 self.navigationBar.userDetail = userDetail
                 self.headerView.dongtais = dongtais
+                self.headerView.currentTopTabType = .dongtai
+                self.headerView.maxCursor = cursor
                 if userDetail.bottom_tab.count == 0{
                     self.headerView.height = 969 - 44
                     self.bottomViewBottom.constant = 0
@@ -64,6 +68,12 @@ class UserDetailViewController: UIViewController {
                 self.scrollView.contentSize = CGSize(width: screenWidth, height: self.headerView.height)
             })
             
+        }
+        headerView.didSelectUserUID = {[weak self] (uid) in
+//            print(uid)
+            let userDetailVC = UserDetailViewController()
+            userDetailVC.userId = uid
+            self!.navigationController?.pushViewController(userDetailVC, animated: true)
         }
     }
     
@@ -164,6 +174,15 @@ extension UserDetailViewController: UIScrollViewDelegate{
 }
 
 extension UserDetailViewController: UserDetailBottomViewDelegate{
+    /// 点击了用户或者话题
+    private func didSelectTopicOrUser(){
+        headerView.didSelectCellWithDongtai = { [weak self] (dongtai) in
+            let dongtaiDetailVC = DongtaiDetailViewController()
+            dongtaiDetailVC.dongtai = dongtai
+            self!.navigationController?.pushViewController(dongtaiDetailVC, animated: true)
+        }
+    }
+    
     //bottomView 底部按钮的点击
     func bottomView(clicked button: UIButton, bottomTab: BottomTab) {
         let bottomPushVC = UserDetailBottomPushController()

@@ -93,6 +93,25 @@ struct EmojiManager {
     func showEmoji(content: String, font: UIFont) -> NSMutableAttributedString {
         // 将 content 转成 attributedString
         let attributedString = NSMutableAttributedString(string: content)
+        
+//        //-------设置转发用户高亮------
+//        let userPattern = "@.*?:"
+//        let userRegex = try! NSRegularExpression(pattern: userPattern, options: [])
+//        let userResults = userRegex.matches(in: content, options: [], range: NSRange(location: 0, length: content.count))
+//        print(content)
+//        
+//        if userResults.count != 0 {
+//            for result in userResults{
+//                //取出用户名
+//                let userName = (content as NSString).substring(with: result.range)
+//                print(userName)
+//                let attributeUserName = NSMutableAttributedString(string: userName)
+//                attributeUserName.setAttributes([.foregroundColor:UIColor.blueFontColor()], range: NSRange(location: 0, length: attributeUserName.length))
+//                attributedString.replaceCharacters(in: result.range, with: attributeUserName)
+//            }
+//        }
+//        
+        //-------显示emoji表情图片------
         // emoji 表情的正则表达式
         let emojiPattern = "\\[.*?\\]"
         // 创建正则表达式对象，匹配 emji 表情
@@ -107,6 +126,7 @@ struct EmojiManager {
                 let result = results[index]
                 // 取出 emoji 的名字
                 let emojiName = (content as NSString).substring(with: result.range)
+               
                 let attachment = NSTextAttachment()
                 // 取出对应的 emoji 模型
                 guard let emoji = emojis.filter({ $0.name == emojiName }).first else { return attributedString}

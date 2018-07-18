@@ -22,6 +22,10 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Yv-F0-Ppy">
                         <rect key="frame" x="0.0" y="0.0" width="179" height="156"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wr3-xw-QvM">
+                        <rect key="frame" x="66" y="63" width="46" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </button>
                 </subviews>
             </view>
             <constraints>
@@ -33,6 +37,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="179" height="156"/>
             <connections>
+                <outlet property="iconButton" destination="Wr3-xw-QvM" id="qGA-4k-8fh"/>
                 <outlet property="thumbImageView" destination="0Yv-F0-Ppy" id="zbB-LA-b2k"/>
             </connections>
             <point key="canvasLocation" x="98.5" y="107"/>

@@ -48,6 +48,7 @@
 		4BB32DFC20F45D8C00B12036 /* RelationRecommendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB32DFB20F45D8C00B12036 /* RelationRecommendView.xib */; };
 		4BB32DFF20F462DE00B12036 /* RelationRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB32DFD20F462DE00B12036 /* RelationRecommendCell.swift */; };
 		4BB32E0020F462DE00B12036 /* RelationRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB32DFE20F462DE00B12036 /* RelationRecommendCell.xib */; };
+		4BB4BEEA20FC7462002DF16C /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4BEE920FC7462002DF16C /* RefreshView.swift */; };
 		4BB7FAE820F74DD300B2B50C /* DongtaiOriginThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7FAE720F74DD300B2B50C /* DongtaiOriginThreadView.swift */; };
 		4BB7FAEA20F74DEB00B2B50C /* DongtaiOriginThreadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB7FAE920F74DEB00B2B50C /* DongtaiOriginThreadView.xib */; };
 		4BB7FAEC20F7507300B2B50C /* DongtaiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7FAEB20F7507300B2B50C /* DongtaiCollectionView.swift */; };
@@ -55,6 +56,8 @@
 		4BB7FAF020F75F7100B2B50C /* UIKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7FAEF20F75F7100B2B50C /* UIKit+Extension.swift */; };
 		4BB7FAF220F771EB00B2B50C /* HomeNaviagtionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7FAF120F771EB00B2B50C /* HomeNaviagtionBar.swift */; };
 		4BB7FAF420F7720A00B2B50C /* HomeNaviagtionBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB7FAF320F7720A00B2B50C /* HomeNaviagtionBar.xib */; };
+		4BC00A2020FEE03700ACDB5B /* DongtaiNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC00A1F20FEE03700ACDB5B /* DongtaiNavigationBar.swift */; };
+		4BC00A2220FEE04800ACDB5B /* DongtaiNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC00A2120FEE04800ACDB5B /* DongtaiNavigationBar.xib */; };
 		4BC2BD3320E0E4A8006B8BB4 /* NoLoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3220E0E4A8006B8BB4 /* NoLoginHeaderView.swift */; };
 		4BC2BD3520E0E4BA006B8BB4 /* NoLoginHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3420E0E4BA006B8BB4 /* NoLoginHeaderView.xib */; };
 		4BC2BD3720E10539006B8BB4 /* MyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2BD3620E10539006B8BB4 /* MyTheme.swift */; };
@@ -67,6 +70,9 @@
 		4BC3A9D020EA1A4C0039BBE1 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3A9CF20EA1A4C0039BBE1 /* SQLiteManager.swift */; };
 		4BC822B820F85973000D0522 /* WeitoutiaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC822B620F85973000D0522 /* WeitoutiaoViewController.swift */; };
 		4BC822B920F85973000D0522 /* WeitoutiaoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC822B720F85973000D0522 /* WeitoutiaoViewController.xib */; };
+		4BC822C020F870D7000D0522 /* PreviewDongtaiLargeImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC822BE20F870D6000D0522 /* PreviewDongtaiLargeImageController.swift */; };
+		4BC822C120F870D7000D0522 /* PreviewDongtaiLargeImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC822BF20F870D7000D0522 /* PreviewDongtaiLargeImageController.xib */; };
+		4BC822C320F8B344000D0522 /* RichLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC822C220F8B344000D0522 /* RichLabel.swift */; };
 		4BCDBBF820F3114800E0E291 /* UserDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDBBF720F3114800E0E291 /* UserDetailBottomView.swift */; };
 		4BCE167820E3324D009723C5 /* settingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BCE167720E3324D009723C5 /* settingPlist.plist */; };
 		4BCE167A20E33501009723C5 /* MyCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE167920E33501009723C5 /* MyCellModel.swift */; };
@@ -80,6 +86,11 @@
 		4BD39C8E20EC6946006617DD /* UserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD39C8D20EC6946006617DD /* UserDetailHeaderView.xib */; };
 		4BD4DDEA20D94AE20002D3FA /* MyOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4DDE820D94AE20002D3FA /* MyOtherCell.swift */; };
 		4BD4DDEB20D94AE20002D3FA /* MyOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4DDE920D94AE20002D3FA /* MyOtherCell.xib */; };
+		4BD6A7A420FDB409008A6CEA /* UserDetailWendaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD6A7A220FDB409008A6CEA /* UserDetailWendaCell.swift */; };
+		4BD6A7A520FDB409008A6CEA /* UserDetailWendaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD6A7A320FDB409008A6CEA /* UserDetailWendaCell.xib */; };
+		4BD6A7A720FDC386008A6CEA /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD6A7A620FDC386008A6CEA /* SVProgressHUD+Extension.swift */; };
+		4BD6A7AA20FDC506008A6CEA /* DongtaiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD6A7A820FDC506008A6CEA /* DongtaiDetailViewController.swift */; };
+		4BD6A7AB20FDC506008A6CEA /* DongtaiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD6A7A920FDC506008A6CEA /* DongtaiDetailViewController.xib */; };
 		4BD7D80120EF43120083B8B1 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD7D80020EF43120083B8B1 /* UserDetail.swift */; };
 		4BDF19D420E1EAA1007940C7 /* MoreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF19D320E1EAA1007940C7 /* MoreLoginViewController.swift */; };
 		4BDF19D620E1EAE8007940C7 /* MoreLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF19D520E1EAE8007940C7 /* MoreLoginViewController.storyboard */; };
@@ -153,6 +164,7 @@
 		4BB32DFB20F45D8C00B12036 /* RelationRecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelationRecommendView.xib; sourceTree = "<group>"; };
 		4BB32DFD20F462DE00B12036 /* RelationRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationRecommendCell.swift; sourceTree = "<group>"; };
 		4BB32DFE20F462DE00B12036 /* RelationRecommendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelationRecommendCell.xib; sourceTree = "<group>"; };
+		4BB4BEE920FC7462002DF16C /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		4BB7FAE720F74DD300B2B50C /* DongtaiOriginThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiOriginThreadView.swift; sourceTree = "<group>"; };
 		4BB7FAE920F74DEB00B2B50C /* DongtaiOriginThreadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiOriginThreadView.xib; sourceTree = "<group>"; };
 		4BB7FAEB20F7507300B2B50C /* DongtaiCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiCollectionView.swift; sourceTree = "<group>"; };
@@ -160,6 +172,8 @@
 		4BB7FAEF20F75F7100B2B50C /* UIKit+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
 		4BB7FAF120F771EB00B2B50C /* HomeNaviagtionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNaviagtionBar.swift; sourceTree = "<group>"; };
 		4BB7FAF320F7720A00B2B50C /* HomeNaviagtionBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNaviagtionBar.xib; sourceTree = "<group>"; };
+		4BC00A1F20FEE03700ACDB5B /* DongtaiNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiNavigationBar.swift; sourceTree = "<group>"; };
+		4BC00A2120FEE04800ACDB5B /* DongtaiNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiNavigationBar.xib; sourceTree = "<group>"; };
 		4BC2BD3220E0E4A8006B8BB4 /* NoLoginHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLoginHeaderView.swift; sourceTree = "<group>"; };
 		4BC2BD3420E0E4BA006B8BB4 /* NoLoginHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoLoginHeaderView.xib; sourceTree = "<group>"; };
 		4BC2BD3620E10539006B8BB4 /* MyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTheme.swift; sourceTree = "<group>"; };
@@ -174,6 +188,9 @@
 		4BC3A9CF20EA1A4C0039BBE1 /* SQLiteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
 		4BC822B620F85973000D0522 /* WeitoutiaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeitoutiaoViewController.swift; sourceTree = "<group>"; };
 		4BC822B720F85973000D0522 /* WeitoutiaoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeitoutiaoViewController.xib; sourceTree = "<group>"; };
+		4BC822BE20F870D6000D0522 /* PreviewDongtaiLargeImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewDongtaiLargeImageController.swift; sourceTree = "<group>"; };
+		4BC822BF20F870D7000D0522 /* PreviewDongtaiLargeImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewDongtaiLargeImageController.xib; sourceTree = "<group>"; };
+		4BC822C220F8B344000D0522 /* RichLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichLabel.swift; sourceTree = "<group>"; };
 		4BCDBBF720F3114800E0E291 /* UserDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailBottomView.swift; sourceTree = "<group>"; };
 		4BCE167720E3324D009723C5 /* settingPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = settingPlist.plist; sourceTree = "<group>"; };
 		4BCE167920E33501009723C5 /* MyCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellModel.swift; sourceTree = "<group>"; };
@@ -187,6 +204,11 @@
 		4BD39C8D20EC6946006617DD /* UserDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailHeaderView.xib; sourceTree = "<group>"; };
 		4BD4DDE820D94AE20002D3FA /* MyOtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOtherCell.swift; sourceTree = "<group>"; };
 		4BD4DDE920D94AE20002D3FA /* MyOtherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOtherCell.xib; sourceTree = "<group>"; };
+		4BD6A7A220FDB409008A6CEA /* UserDetailWendaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailWendaCell.swift; sourceTree = "<group>"; };
+		4BD6A7A320FDB409008A6CEA /* UserDetailWendaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailWendaCell.xib; sourceTree = "<group>"; };
+		4BD6A7A620FDC386008A6CEA /* SVProgressHUD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Extension.swift"; sourceTree = "<group>"; };
+		4BD6A7A820FDC506008A6CEA /* DongtaiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiDetailViewController.swift; sourceTree = "<group>"; };
+		4BD6A7A920FDC506008A6CEA /* DongtaiDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiDetailViewController.xib; sourceTree = "<group>"; };
 		4BD7D80020EF43120083B8B1 /* UserDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		4BDF19D320E1EAA1007940C7 /* MoreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLoginViewController.swift; sourceTree = "<group>"; };
 		4BDF19D520E1EAE8007940C7 /* MoreLoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreLoginViewController.storyboard; sourceTree = "<group>"; };
@@ -428,6 +450,8 @@
 		4BA9D0C220D5458800E54049 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4BC822BE20F870D6000D0522 /* PreviewDongtaiLargeImageController.swift */,
+				4BC822BF20F870D7000D0522 /* PreviewDongtaiLargeImageController.xib */,
 				4BA9D0C320D5458800E54049 /* MineViewController.swift */,
 				4BDF19D320E1EAA1007940C7 /* MoreLoginViewController.swift */,
 				4BDF19D520E1EAE8007940C7 /* MoreLoginViewController.storyboard */,
@@ -439,6 +463,8 @@
 				4B29D24720F33DA6001B9486 /* UserDetailBottomPopController.swift */,
 				4B29D24920F33DC0001B9486 /* UserDetailBottomPopController.storyboard */,
 				4B29D24D20F344F0001B9486 /* MyPresentationController.swift */,
+				4BD6A7A820FDC506008A6CEA /* DongtaiDetailViewController.swift */,
+				4BD6A7A920FDC506008A6CEA /* DongtaiDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -488,6 +514,10 @@
 				4BB7FAE920F74DEB00B2B50C /* DongtaiOriginThreadView.xib */,
 				4BB7FAEB20F7507300B2B50C /* DongtaiCollectionView.swift */,
 				4BB7FAED20F75C3E00B2B50C /* DongtaiCollectionView.xib */,
+				4BD6A7A220FDB409008A6CEA /* UserDetailWendaCell.swift */,
+				4BD6A7A320FDB409008A6CEA /* UserDetailWendaCell.xib */,
+				4BC00A1F20FEE03700ACDB5B /* DongtaiNavigationBar.swift */,
+				4BC00A2120FEE04800ACDB5B /* DongtaiNavigationBar.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -524,6 +554,8 @@
 			isa = PBXGroup;
 			children = (
 				4BA9D0CC20D5458800E54049 /* MyTabBar.swift */,
+				4BC822C220F8B344000D0522 /* RichLabel.swift */,
+				4BB4BEE920FC7462002DF16C /* RefreshView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -531,6 +563,7 @@
 		4BA9D0D820D54E7600E54049 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4BD6A7A620FDC386008A6CEA /* SVProgressHUD+Extension.swift */,
 				4BB7FAEF20F75F7100B2B50C /* UIKit+Extension.swift */,
 				4B1DB65C20F49FBA00E60746 /* Foundation+Extension.swift */,
 			);
@@ -728,10 +761,14 @@
 				4BA9D07A20D4EC3D00E54049 /* Assets.xcassets in Resources */,
 				4BB32DFC20F45D8C00B12036 /* RelationRecommendView.xib in Resources */,
 				4BCE167820E3324D009723C5 /* settingPlist.plist in Resources */,
+				4BD6A7A520FDB409008A6CEA /* UserDetailWendaCell.xib in Resources */,
 				4BC2BD3A20E10725006B8BB4 /* default_theme.plist in Resources */,
 				4BC2BD3C20E10737006B8BB4 /* night_theme.plist in Resources */,
 				4BDF19D620E1EAE8007940C7 /* MoreLoginViewController.storyboard in Resources */,
+				4BD6A7AB20FDC506008A6CEA /* DongtaiDetailViewController.xib in Resources */,
+				4BC822C120F870D7000D0522 /* PreviewDongtaiLargeImageController.xib in Resources */,
 				4BC3A9C420EA046A0039BBE1 /* OfflineDownloadCell.xib in Resources */,
+				4BC00A2220FEE04800ACDB5B /* DongtaiNavigationBar.xib in Resources */,
 				4B29D24A20F33DC0001B9486 /* UserDetailBottomPopController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -782,6 +819,7 @@
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
@@ -795,6 +833,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
@@ -820,12 +859,15 @@
 				4BB7FAEC20F7507300B2B50C /* DongtaiCollectionView.swift in Sources */,
 				4BC3A9C320EA046A0039BBE1 /* OfflineDownloadCell.swift in Sources */,
 				4BC2BD3720E10539006B8BB4 /* MyTheme.swift in Sources */,
+				4BB4BEEA20FC7462002DF16C /* RefreshView.swift in Sources */,
 				4BA9D0D020D5458800E54049 /* AppDelegate.swift in Sources */,
 				4B76151A20DFC83400CD7D6D /* MyConcernCell.swift in Sources */,
 				4BC2BD3320E0E4A8006B8BB4 /* NoLoginHeaderView.swift in Sources */,
 				4B29D24620F33BE0001B9486 /* UserDetailBottomPushController.swift in Sources */,
+				4BD6A7AA20FDC506008A6CEA /* DongtaiDetailViewController.swift in Sources */,
 				4B08CF4020DA42BB00C83997 /* MyFirstSectionCell.swift in Sources */,
 				4B22541A20F5CDEC00FE184C /* PostVideoOrArticleView.swift in Sources */,
+				4BD6A7A420FDB409008A6CEA /* UserDetailWendaCell.swift in Sources */,
 				4BC3A9C620EA074C0039BBE1 /* HomeNewsTitle.swift in Sources */,
 				4BB7FAE820F74DD300B2B50C /* DongtaiOriginThreadView.swift in Sources */,
 				4BB7FAF020F75F7100B2B50C /* UIKit+Extension.swift in Sources */,
@@ -834,6 +876,8 @@
 				4BC3A9D020EA1A4C0039BBE1 /* SQLiteManager.swift in Sources */,
 				4BB7FAF220F771EB00B2B50C /* HomeNaviagtionBar.swift in Sources */,
 				4BA9D0CE20D5458800E54049 /* VideoViewController.swift in Sources */,
+				4BC822C320F8B344000D0522 /* RichLabel.swift in Sources */,
+				4BD6A7A720FDC386008A6CEA /* SVProgressHUD+Extension.swift in Sources */,
 				4B1DB66120F49FC300E60746 /* Emoji.swift in Sources */,
 				4B29D24C20F342E8001B9486 /* PopoverAnimator.swift in Sources */,
 				4BD39C8920EC649D006617DD /* UserDetailViewController.swift in Sources */,
@@ -843,6 +887,7 @@
 				4B35BCE020E3827F009AD9F7 /* OfflineDownloadController.swift in Sources */,
 				4BA9D0D420D5458800E54049 /* MyNavigationController.swift in Sources */,
 				4BCE167A20E33501009723C5 /* MyCellModel.swift in Sources */,
+				4BC822C020F870D7000D0522 /* PreviewDongtaiLargeImageController.swift in Sources */,
 				4B29D24E20F344F0001B9486 /* MyPresentationController.swift in Sources */,
 				4BD4DDEA20D94AE20002D3FA /* MyOtherCell.swift in Sources */,
 				4B1DB66320F4A10500E60746 /* NewsModel.swift in Sources */,
@@ -854,6 +899,7 @@
 				4BDF19D820E23F77007940C7 /* SettingViewController.swift in Sources */,
 				4BA9D0D320D5458800E54049 /* MyTabBarController.swift in Sources */,
 				4BA9D0D720D54D1200E54049 /* Const.swift in Sources */,
+				4BC00A2020FEE03700ACDB5B /* DongtaiNavigationBar.swift in Sources */,
 				4BB32DFA20F45D7700B12036 /* RelationRecommendView.swift in Sources */,
 				4B22542720F5E92900FE184C /* DongtaiCollectionViewCell.swift in Sources */,
 				4B1DB66020F49FC300E60746 /* Calculate.swift in Sources */,

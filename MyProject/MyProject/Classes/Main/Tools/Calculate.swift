@@ -89,7 +89,7 @@ extension Calculatable {
                 // 取出临时数组中的模型
                 var richContent = temps[index]
                 // 取出用户名
-                richContent.name = (content as NSString).substring(with: result.range)
+                richContent.name = "@"+(content as NSString).substring(with: result.range)+":"
                 richContents.append(richContent)
             }
         }

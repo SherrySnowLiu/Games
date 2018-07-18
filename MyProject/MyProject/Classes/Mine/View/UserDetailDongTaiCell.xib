@@ -154,7 +154,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tk3-zo-yTH">
                         <rect key="frame" x="0.0" y="50" width="320" height="31.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAD-wQ-DAt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAD-wQ-DAt" customClass="RichLabel" customModule="MyProject" customModuleProvider="target">
                                 <rect key="frame" x="15" y="0.0" width="290" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="1WB-Bj-bwl"/>
@@ -214,7 +214,7 @@
                 <outlet property="areaLabel" destination="H9c-Yy-3hN" id="ZCf-AX-iqL"/>
                 <outlet property="avatarImageView" destination="aEQ-Op-LGG" id="gWA-Gr-XkL"/>
                 <outlet property="commentButton" destination="tBO-L8-TJ5" id="xOj-Sa-4sv"/>
-                <outlet property="contentLabel" destination="qAD-wQ-DAt" id="pFW-EY-STK"/>
+                <outlet property="contentLabel" destination="qAD-wQ-DAt" id="UMa-Ab-InW"/>
                 <outlet property="contentLabelHeight" destination="1WB-Bj-bwl" id="PuH-Ss-GSo"/>
                 <outlet property="forwardButton" destination="bTx-Op-Z5r" id="5B7-GH-dIb"/>
                 <outlet property="likeButton" destination="qIU-BN-OS9" id="Awv-FA-IRR"/>

@@ -10,11 +10,16 @@ import UIKit
 
 class DongtaiOriginThreadView: UIView ,NibLoadable{
     
-    var originthread:DongtaiOriginThread?{
+    let emojiManager = EmojiManager()
+    
+    var originthread=DongtaiOriginThread(){
         didSet{
-            contentLabel.text = originthread!.content
-            contentLabelHeight.constant = originthread!.contentH
-            collectionView.thumbImageList = originthread!.thumb_image_list
+            let mutableAttributedString = NSMutableAttributedString(string: "@\(originthread.user.screen_name)", attributes: [.foregroundColor:UIColor.blueFontColor()])
+            mutableAttributedString.append(emojiManager.showEmoji(content: originthread.content, font: contentLabel.font))
+            contentLabel.attributedText = mutableAttributedString
+            contentLabelHeight.constant = originthread.contentH
+            collectionView.thumbImageList = originthread.thumb_image_list
+            collectionView.largeImages = originthread.large_image_list
             layoutIfNeeded()
         }
     }
@@ -33,6 +38,6 @@ class DongtaiOriginThreadView: UIView ,NibLoadable{
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        height = originthread!.height
+        height = originthread.height
     }
 }
